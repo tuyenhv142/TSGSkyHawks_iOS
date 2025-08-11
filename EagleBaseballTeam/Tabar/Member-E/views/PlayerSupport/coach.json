@@ -1,0 +1,82 @@
+{
+  "members_title": "教練",
+  "members_data": [
+    {
+      "members_name": "洪一中",
+      "members_number": "2",
+      "members_pos": "總教練",
+      "members_image": "coach_a_2",
+      "members_portrait": "coach_p_2",
+    },
+    {
+      "members_name": "鄭乃文",
+      "members_number": "96",
+      "members_pos": "一軍助理打擊教練",
+      "members_image": "coach_a_96",
+      "members_portrait": "coach_p_96",
+    },
+    {
+      "members_name": "沈柏蒼",
+      "members_number": "35",
+      "members_pos": "牛棚教練",
+      "members_image": "coach_a_35",
+      "members_portrait": "coach_p_35",
+    },
+    {
+      "members_name": "黃甘霖",
+      "members_number": "53",
+      "members_pos": "外野守備兼跑壘教練",
+      "members_image": "coach_a_53",
+      "members_portrait": "coach_p_53",
+    },
+    {
+      "members_name": "路易士",
+      "members_number": "23",
+      "members_pos": "打擊教練",
+      "members_image": "coach_a_23",
+      "members_portrait": "coach_p_23",
+    },
+    {
+      "members_name": "蕭任汶",
+      "members_number": "38",
+      "members_pos": "投手教練",
+      "members_image": "coach_a_38",
+      "members_portrait": "coach_p_38",
+    },
+    {
+      "members_name": "横田久則",
+      "members_number": "34",
+      "members_pos": "投手統籌教練",
+      "members_image": "coach_a_34",
+      "members_portrait": "coach_p_34",
+    },
+    {
+      "members_name": "鄧蒔陽",
+      "members_number": "68",
+      "members_pos": "首席兼內野守備教練",
+      "members_image": "coach_a_68",
+      "members_portrait": "coach_p_68",
+    },
+    {
+      "members_name": "鄭漢禮",
+      "members_number": "89",
+      "members_pos": "捕手教練",
+      "members_image": "coach_a_89",
+      "members_portrait": "coach_p_89",
+    },
+    {
+      "members_name": "林大展",
+      "members_number": "012",
+      "members_pos": "體能教練",
+      "members_image": "coach_a_012",
+      "members_portrait": "",
+    },
+    {
+      "members_name": "里隆文",
+      "members_number": "011",
+      "members_pos": "體能總監教練",
+      "members_image": "coach_a_011",
+      "members_portrait": "",
+    },
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "members_title": "球員升降",
+  "members_data": [
+    {
+      "members_name": "洪一中",
+      "members_date": "2025/01/07",
+      "members_reason": "升一軍",
+    },
+    {
+      "members_name": "鄭乃文",
+      "members_date": "2024/10/07",
+      "members_reason": "升二軍",
+    },
+    {
+      "members_name": "沈柏蒼",
+      "members_date": "2024/12/07",
+      "members_reason": "降二軍",
+    },
+    {
+      "members_name": "黃甘霖",
+      "members_date": "2025/01/27",
+      "members_reason": "升一軍",
+    },
+    {
+      "members_name": "路易士",
+      "members_date": "2025/01/10",
+      "members_reason": "降二軍",
+    },
+    {
+      "members_name": "蕭任汶",
+      "members_date": "2025/01/01",
+      "members_reason": "转会",
+    },
+    {
+      "members_name": "横田久則",
+      "members_date": "2024/12/24",
+      "members_reason": "退役",
+    },
+    {
+      "members_name": "鄧蒔陽",
+      "members_date": "2024/11/12",
+      "members_reason": "降二軍",
+    },
+    {
+      "members_name": "鄭漢禮",
+      "members_date": "2024/07/07",
+      "members_reason": "退役",
+    },
+    {
+      "members_name": "林大展",
+      "members_date": "2024/05/07",
+      "members_reason": "转会",
+    },
+    {
+      "members_name": "里隆文",
+      "members_date": "2025/01/15",
+      "members_reason": "降二軍",
+    },
+  ]
+}

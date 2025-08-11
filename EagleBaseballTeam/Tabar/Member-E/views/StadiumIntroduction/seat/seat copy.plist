@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>section_status</key>
+		<false/>
+		<key>row_content_normalPrice</key>
+		<integer>450</integer>
+		<key>row_content_holidayPrice</key>
+		<integer>650</integer>
+		<key>row_content_city</key>
+		<string>澄清湖</string>
+		<key>row_content_header</key>
+		<string>熱區</string>
+		<key>row_title</key>
+		<string>熱區｜一壘I~K區、三壘P~R區</string>
+	</dict>
+</array>
+</plist>

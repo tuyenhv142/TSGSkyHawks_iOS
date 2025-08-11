@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>goodstype</key>
+		<integer>1</integer>
+		<key>goodsfavorator</key>
+		<false/>
+		<key>goodsimage</key>
+		<string>wang</string>
+		<key>goodsopenstatus</key>
+		<integer>0</integer>
+		<key>goodsprice</key>
+		<string>2499</string>
+		<key>goodsName</key>
+		<string>王柏融【2024鷹勇戰士主題實戰球衣】 限鷹國皇家</string>
+	</dict>
+	<dict>
+		<key>goodstype</key>
+		<integer>1</integer>
+		<key>goodsfavorator</key>
+		<false/>
+		<key>goodsimage</key>
+		<string>hong</string>
+		<key>goodsopenstatus</key>
+		<integer>0</integer>
+		<key>goodsprice</key>
+		<string>2099</string>
+		<key>goodsName</key>
+		<string>洪一中【2024康和證券主題實戰球衣】</string>
+	</dict>
+	<dict>
+		<key>goodstype</key>
+		<integer>1</integer>
+		<key>goodsfavorator</key>
+		<false/>
+		<key>goodsimage</key>
+		<string>lan</string>
+		<key>goodsopenstatus</key>
+		<integer>0</integer>
+		<key>goodsprice</key>
+		<string>1699</string>
+		<key>goodsName</key>
+		<string>藍寅倫【2024心動時刻主題實戰球衣】</string>
+	</dict>
+	<dict>
+		<key>goodstype</key>
+		<integer>2</integer>
+		<key>goodsfavorator</key>
+		<false/>
+		<key>goodsimage</key>
+		<string>qiubang</string>
+		<key>goodsopenstatus</key>
+		<integer>0</integer>
+		<key>goodsprice</key>
+		<string>799</string>
+		<key>goodsName</key>
+		<string>實戰球棒置物架</string>
+	</dict>
+</array>
+</plist>

@@ -1,0 +1,108 @@
+{
+    "catering_title": "餐飲",
+    "catering_data": [
+        {
+            "catering_type": 1,
+            "catering_type_name": "美食",
+            "catering_type_data": [
+                {
+                    "catering_name": "漢堡王",
+                    "catering_describe": "",
+                    "catering_image": "cy_hbw"
+                },
+                {
+                    "catering_name": "私G炸雞柳條",
+                    "catering_describe": "",
+                    "catering_image": "cy_sgzjlt"
+                },
+                {
+                    "catering_name": "烤香腸/現切芭樂",
+                    "catering_describe": "",
+                    "catering_image": "cy_kxc_xtbl"
+                },
+                {
+                    "catering_name": "職原市美食市集",
+                    "catering_describe": "",
+                    "catering_image": "cy_zysmssj"
+                },
+                {
+                    "catering_name": "芋見綠豆",
+                    "catering_describe": "",
+                    "catering_image": "cy_yjld"
+                },
+                {
+                    "catering_name": "台灣啤酒",
+                    "catering_describe": "",
+                    "catering_image": "cy_twpj"
+                },
+                {
+                    "catering_name": "就是要熱狗堡",
+                    "catering_describe": "",
+                    "catering_image": "cy_jsyrgb"
+                },
+                {
+                    "catering_name": "必勝客",
+                    "catering_describe": "",
+                    "catering_image": "cy_bsk"
+                },
+                {
+                    "catering_name": "肯德基",
+                    "catering_describe": "",
+                    "catering_image": "cy_kdj"
+                },
+                {
+                    "catering_name": "五桐號",
+                    "catering_describe": "",
+                    "catering_image": "cy_wth"
+                }
+            ]
+        },
+        {
+            "catering_type": 2,
+            "catering_type_name": "商品",
+            "catering_type_data": [
+                {
+                    "catering_name": "常態商品區",
+                    "catering_describe": "",
+                    "catering_image": "cy_shangpin"
+                },
+                {
+                    "catering_name": "主題商品區",
+                    "catering_describe": "",
+                    "catering_image": "cy_shangpin"
+                },
+                {
+                    "catering_name": "拍貼機",
+                    "catering_describe": "",
+                    "catering_image": "cy_shangpin"
+                },
+                {
+                    "catering_name": "燙印服務、扭蛋區",
+                    "catering_describe": "",
+                    "catering_image": "cy_shangpin"
+                }
+            ]
+        },
+        {
+            "catering_type": 3,
+            "catering_type_name": "活動",
+            "catering_type_data": [
+                {
+                    "catering_name": "藝術角",
+                    "catering_describe": "",
+                    "catering_image": "cy_huodong"
+                },
+                {
+                    "catering_name": "姓名貼紙製作區",
+                    "catering_describe": "",
+                    "catering_image": "cy_huodong"
+                },
+                {
+                    "catering_name": "拍照角",
+                    "catering_describe": "",
+                    "catering_image": "cy_huodong"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,1012 @@
+{
+    "ws_schedule_title": "鷹援班表",
+    "ws_schedule_data": [
+        {
+            "ws_month": "2025/05",
+            "ws_month_data": [
+                {
+                    "ws_day": "2025/05/02",
+					"ws_day_name": "五",
+                    "ws_day_data": [
+                        {
+                            "ws_type": "WS 第一屆",
+                            "ws_type_total": "7/15",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "安芝儇",
+                                    "ws_nickname": "安芝儇",
+                                    "ws_number": "2",
+                                    "ws_image": "ws_azy_2"
+                                },
+                                {
+                                    "ws_name": "黃羽瑈",
+                                    "ws_nickname": "瑈瑈",
+                                    "ws_number": "23",
+                                    "ws_image": "ws_rr_23"
+                                },
+                                {
+                                    "ws_name": "趙宜莉",
+                                    "ws_nickname": "一粒",
+                                    "ws_number": "22",
+                                    "ws_image": "ws_yl_22"
+                                },
+                                {
+                                    "ws_name": "張庭宜",
+                                    "ws_nickname": "艾琳",
+                                    "ws_number": "20",
+                                    "ws_image": "ws_al_20"
+                                },
+                                {
+                                    "ws_name": "方妡蔆",
+                                    "ws_nickname": "妡0",
+                                    "ws_number": "19",
+                                    "ws_image": "ws_xin_19"
+                                },
+                                {
+                                    "ws_name": "黃子宸",
+                                    "ws_nickname": "黃澄澄",
+                                    "ws_number": "18",
+                                    "ws_image": "ws_hcc_18"
+                                },
+                                {
+                                    "ws_name": "莊佳熒",
+                                    "ws_nickname": "JC",
+                                    "ws_number": "16",
+                                    "ws_image": "ws_jc_16"
+                                }
+                            ]
+                        },{
+                            "ws_type": "WS 第二屆",
+                            "ws_type_total": "7/11",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "簡妏錡",
+                                    "ws_nickname": "芃芃",
+                                    "ws_number": "57",
+                                    "ws_image": "ws_pp_57"
+                                },
+                                {
+                                    "ws_name": "林芊妤",
+                                    "ws_nickname": "玖玖",
+                                    "ws_number": "99",
+                                    "ws_image": "ws_jj_99"
+                                },
+                                {
+                                    "ws_name": "王文伶",
+                                    "ws_nickname": "米亞",
+                                    "ws_number": "8",
+                                    "ws_image": "ws_my_8"
+                                },
+                                {
+                                    "ws_name": "潘怡千",
+                                    "ws_nickname": "千千",
+                                    "ws_number": "15",
+                                    "ws_image": "ws_qq_15"
+                                },
+                                {
+                                    "ws_name": "黃可欣",
+                                    "ws_nickname": "尼莫",
+                                    "ws_number": "6",
+                                    "ws_image": "ws_nm_6"
+                                },
+                                {
+                                    "ws_name": "陳怡婷",
+                                    "ws_nickname": "ET",
+                                    "ws_number": "17",
+                                    "ws_image": "ws_et_17"
+                                },
+                                {
+                                    "ws_name": "呂米妮",
+                                    "ws_nickname": "米妮",
+                                    "ws_number": "3",
+                                    "ws_image": "ws_mn_3"
+                                }
+                            ]
+                        },{
+                            "ws_type": "鷹援團",
+                            "ws_type_total": "2/6",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "TAKAO",
+                                    "ws_nickname": "TAKAO",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takao"
+                                },
+                                {
+                                    "ws_name": "TAKAME",
+                                    "ws_nickname": "TAKAME",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takame"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "ws_day": "2025/05/03",
+                    "ws_day_name": "六",
+                    "ws_day_data": [
+                        {
+                            "ws_type": "WS 第一屆",
+                            "ws_type_total": "8/15",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "朴旻曙",
+                                    "ws_nickname": "Mingo",
+                                    "ws_number": "90",
+                                    "ws_image": "ws_pms_90"
+                                },
+                                {
+                                    "ws_name": "蔡沛穎",
+                                    "ws_nickname": "林浠",
+                                    "ws_number": "33",
+                                    "ws_image": "ws_lx_33"
+                                },
+                                {
+                                    "ws_name": "黃子宸",
+                                    "ws_nickname": "黃澄澄",
+                                    "ws_number": "18",
+                                    "ws_image": "ws_hcc_18"
+                                },
+                                {
+                                    "ws_name": "莊佳熒",
+                                    "ws_nickname": "JC",
+                                    "ws_number": "16",
+                                    "ws_image": "ws_jc_16"
+                                },
+                                {
+                                    "ws_name": "吳俞君",
+                                    "ws_nickname": "昆昆",
+                                    "ws_number": "7",
+                                    "ws_image": "ws_kk_7"
+                                },
+                                {
+                                    "ws_name": "林恬妤",
+                                    "ws_nickname": "恬魚",
+                                    "ws_number": "5",
+                                    "ws_image": "ws_ty_5"
+                                },
+                                {
+                                    "ws_name": "李宜軒",
+                                    "ws_nickname": "圈圈",
+                                    "ws_number": "00",
+                                    "ws_image": "ws_qq_00"
+                                },
+                                {
+                                    "ws_name": "蔡佩螢",
+                                    "ws_nickname": "螢螢",
+                                    "ws_number": "62",
+                                    "ws_image": "ws_yy_62"
+                                }
+                            ]
+                        },{
+                            "ws_type": "WS 第二屆",
+                            "ws_type_total": "2/12",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "簡妏錡",
+                                    "ws_nickname": "芃芃",
+                                    "ws_number": "57",
+                                    "ws_image": "ws_pp_57"
+                                },
+                                {
+                                    "ws_name": "林芊妤",
+                                    "ws_nickname": "玖玖",
+                                    "ws_number": "99",
+                                    "ws_image": "ws_jj_99"
+                                }
+                            ]
+                        },{
+                            "ws_type": "鷹援團",
+                            "ws_type_total": "2/6",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "TAKAO",
+                                    "ws_nickname": "TAKAO",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takao"
+                                },
+                                {
+                                    "ws_name": "TAKAME",
+                                    "ws_nickname": "TAKAME",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takame"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "ws_day": "2025/05/04",
+                    "ws_day_name": "日",
+                    "ws_day_data": [
+                        {
+                            "ws_type": "WS 第一屆",
+                            "ws_type_total": "2/15",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "朴旻曙",
+                                    "ws_nickname": "Mingo",
+                                    "ws_number": "90",
+                                    "ws_image": "ws_pms_90"
+                                },
+                                {
+                                    "ws_name": "蔡沛穎",
+                                    "ws_nickname": "林浠",
+                                    "ws_number": "33",
+                                    "ws_image": "ws_lx_33"
+                                }
+                            ]
+                        },{
+                            "ws_type": "WS 第二屆",
+                            "ws_type_total": "2/12",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "簡妏錡",
+                                    "ws_nickname": "芃芃",
+                                    "ws_number": "57",
+                                    "ws_image": "ws_pp_57"
+                                },
+                                {
+                                    "ws_name": "林芊妤",
+                                    "ws_nickname": "玖玖",
+                                    "ws_number": "99",
+                                    "ws_image": "ws_jj_99"
+                                }
+                            ]
+                        },{
+                            "ws_type": "鷹援團",
+                            "ws_type_total": "2/6",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "TAKAO",
+                                    "ws_nickname": "TAKAO",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takao"
+                                },
+                                {
+                                    "ws_name": "TAKAME",
+                                    "ws_nickname": "TAKAME",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takame"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "ws_day": "2025/05/05",
+                    "ws_day_name": "一",
+                    "ws_day_data": [
+                        {
+                            "ws_type": "WS 第一屆",
+                            "ws_type_total": "1/15",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "林恬妤",
+                                    "ws_nickname": "恬魚",
+                                    "ws_number": "5",
+                                    "ws_image": "ws_ty_5"
+                                }
+                            ]
+                        },{
+                            "ws_type": "WS 第二屆",
+                            "ws_type_total": "2/12",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "黃可欣",
+                                    "ws_nickname": "尼莫",
+                                    "ws_number": "6",
+                                    "ws_image": "ws_nm_6"
+                                },
+                                {
+                                    "ws_name": "陳怡婷",
+                                    "ws_nickname": "ET",
+                                    "ws_number": "17",
+                                    "ws_image": "ws_et_17"
+                                }
+                            ]
+                        },{
+                            "ws_type": "鷹援團",
+                            "ws_type_total": "6/6",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "TAKAO",
+                                    "ws_nickname": "TAKAO",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takao"
+                                },
+                                {
+                                    "ws_name": "TAKAME",
+                                    "ws_nickname": "TAKAME",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takame"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ,
+                {
+                    "ws_day": "2025/05/06",
+                    "ws_day_name": "二",
+                    "ws_day_data": [
+                        {
+                            "ws_type": "WS 第一屆",
+                            "ws_type_total": "7/15",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "蔡沛穎",
+                                    "ws_nickname": "林浠",
+                                    "ws_number": "33",
+                                    "ws_image": "ws_lx_33"
+                                },
+                                {
+                                    "ws_name": "黃羽瑈",
+                                    "ws_nickname": "瑈瑈",
+                                    "ws_number": "23",
+                                    "ws_image": "ws_rr_23"
+                                },
+                                {
+                                    "ws_name": "趙宜莉",
+                                    "ws_nickname": "一粒",
+                                    "ws_number": "22",
+                                    "ws_image": "ws_yl_22"
+                                },
+                                {
+                                    "ws_name": "張庭宜",
+                                    "ws_nickname": "艾琳",
+                                    "ws_number": "20",
+                                    "ws_image": "ws_al_20"
+                                },
+                                {
+                                    "ws_name": "方妡蔆",
+                                    "ws_nickname": "妡0",
+                                    "ws_number": "19",
+                                    "ws_image": "ws_xin_19"
+                                },
+                                {
+                                    "ws_name": "林恬妤",
+                                    "ws_nickname": "恬魚",
+                                    "ws_number": "5",
+                                    "ws_image": "ws_ty_5"
+                                },
+                                {
+                                    "ws_name": "陳筱雯",
+                                    "ws_nickname": "筱雯",
+                                    "ws_number": "52",
+                                    "ws_image": "ws_xw_52"
+                                }
+                            ]
+                        },{
+                            "ws_type": "WS 第二屆",
+                            "ws_type_total": "5/12",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "林芊妤",
+                                    "ws_nickname": "玖玖",
+                                    "ws_number": "99",
+                                    "ws_image": "ws_jj_99"
+                                },
+                                {
+                                    "ws_name": "毛凱薇",
+                                    "ws_nickname": "毛毛",
+                                    "ws_number": "39",
+                                    "ws_image": "ws_mm_39"
+                                },
+                                {
+                                    "ws_name": "王文伶",
+                                    "ws_nickname": "米亞",
+                                    "ws_number": "8",
+                                    "ws_image": "ws_my_8"
+                                },
+                                {
+                                    "ws_name": "潘怡千",
+                                    "ws_nickname": "千千",
+                                    "ws_number": "15",
+                                    "ws_image": "ws_qq_15"
+                                },
+                                {
+                                    "ws_name": "陳俞蓁",
+                                    "ws_nickname": "NINA",
+                                    "ws_number": "84",
+                                    "ws_image": "ws_nina_84"
+                                }
+                            ]
+                        },{
+                            "ws_type": "鷹援團",
+                            "ws_type_total": "6/6",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "TAKAO",
+                                    "ws_nickname": "TAKAO",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takao"
+                                },
+                                {
+                                    "ws_name": "TAKAME",
+                                    "ws_nickname": "TAKAME",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takame"
+                                },
+                                {
+                                    "ws_name": "Matt",
+                                    "ws_nickname": "Matt",
+                                    "ws_number": "",
+                                    "ws_image": "ws_matt"
+                                },
+                                {
+                                    "ws_name": "柏澄",
+                                    "ws_nickname": "柏澄",
+                                    "ws_number": "",
+                                    "ws_image": "ws_bai_cheng"
+                                },
+                                {
+                                    "ws_name": "奧丁",
+                                    "ws_nickname": "奧丁",
+                                    "ws_number": "",
+                                    "ws_image": "ws_ao_ding"
+                                },
+                                {
+                                    "ws_name": "沐妍",
+                                    "ws_nickname": "沐妍",
+                                    "ws_number": "",
+                                    "ws_image": "ws_mu_yan"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "ws_day": "2025/05/07",
+                    "ws_day_name": "三",
+                    "ws_day_data": [
+                        {
+                            "ws_type": "WS 第一屆",
+                            "ws_type_total": "4/15",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "李姮樂",
+                                    "ws_nickname": "李樂",
+                                    "ws_number": "10",
+                                    "ws_image": "ws_ll_10"
+                                },
+                                {
+                                    "ws_name": "林恬妤",
+                                    "ws_nickname": "恬魚",
+                                    "ws_number": "5",
+                                    "ws_image": "ws_ty_5"
+                                },
+                                {
+                                    "ws_name": "李宜軒",
+                                    "ws_nickname": "圈圈",
+                                    "ws_number": "00",
+                                    "ws_image": "ws_qq_00"
+                                },
+                                {
+                                    "ws_name": "陳筱雯",
+                                    "ws_nickname": "筱雯",
+                                    "ws_number": "52",
+                                    "ws_image": "ws_xw_52"
+                                }
+                            ]
+                        },{
+                            "ws_type": "WS 第二屆",
+                            "ws_type_total": "4/12",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "陳怡婷",
+                                    "ws_nickname": "ET",
+                                    "ws_number": "17",
+                                    "ws_image": "ws_et_17"
+                                },
+                                {
+                                    "ws_name": "黃鈺婷",
+                                    "ws_nickname": "芋頭",
+                                    "ws_number": "75",
+                                    "ws_image": "ws_yt_75"
+                                },
+                                {
+                                    "ws_name": "呂米妮",
+                                    "ws_nickname": "米妮",
+                                    "ws_number": "3",
+                                    "ws_image": "ws_mn_3"
+                                },
+                                {
+                                    "ws_name": "張惠晴",
+                                    "ws_nickname": "會晴",
+                                    "ws_number": "66",
+                                    "ws_image": "ws_kq_66"
+                                }
+                            ]
+                        },{
+                            "ws_type": "鷹援團",
+                            "ws_type_total": "2/6",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "TAKAO",
+                                    "ws_nickname": "TAKAO",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takao"
+                                },
+                                {
+                                    "ws_name": "TAKAME",
+                                    "ws_nickname": "TAKAME",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takame"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "ws_day": "2025/05/16",
+                    "ws_day_name": "五",
+                    "ws_day_data": [
+                        {
+                            "ws_type": "WS 第一屆",
+                            "ws_type_total": "4/15",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "李姮樂",
+                                    "ws_nickname": "李樂",
+                                    "ws_number": "10",
+                                    "ws_image": "ws_ll_10"
+                                },
+                                {
+                                    "ws_name": "李宜軒",
+                                    "ws_nickname": "圈圈",
+                                    "ws_number": "00",
+                                    "ws_image": "ws_qq_00"
+                                },
+                                {
+                                    "ws_name": "蔡佩螢",
+                                    "ws_nickname": "螢螢",
+                                    "ws_number": "62",
+                                    "ws_image": "ws_yy_62"
+                                },
+                                {
+                                    "ws_name": "陳筱雯",
+                                    "ws_nickname": "筱雯",
+                                    "ws_number": "52",
+                                    "ws_image": "ws_xw_52"
+                                }
+                            ]
+                        },{
+                            "ws_type": "WS 第二屆",
+                            "ws_type_total": "0/12",
+                            "ws_type_data": []
+                        },{
+                            "ws_type": "鷹援團",
+                            "ws_type_total": "6/6",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "TAKAO",
+                                    "ws_nickname": "TAKAO",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takao"
+                                },
+                                {
+                                    "ws_name": "TAKAME",
+                                    "ws_nickname": "TAKAME",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takame"
+                                },
+                                {
+                                    "ws_name": "Matt",
+                                    "ws_nickname": "Matt",
+                                    "ws_number": "",
+                                    "ws_image": "ws_matt"
+                                },
+                                {
+                                    "ws_name": "柏澄",
+                                    "ws_nickname": "柏澄",
+                                    "ws_number": "",
+                                    "ws_image": "ws_bai_cheng"
+                                },
+                                {
+                                    "ws_name": "奧丁",
+                                    "ws_nickname": "奧丁",
+                                    "ws_number": "",
+                                    "ws_image": "ws_ao_ding"
+                                },
+                                {
+                                    "ws_name": "沐妍",
+                                    "ws_nickname": "沐妍",
+                                    "ws_number": "",
+                                    "ws_image": "ws_mu_yan"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "ws_day": "2025/05/17",
+                    "ws_day_name": "六",
+                    "ws_day_data": [
+                        {
+                            "ws_type": "WS 第一屆",
+                            "ws_type_total": "5/15",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "趙宜莉",
+                                    "ws_nickname": "一粒",
+                                    "ws_number": "22",
+                                    "ws_image": "ws_yl_22"
+                                },
+                                {
+                                    "ws_name": "黃子宸",
+                                    "ws_nickname": "黃澄澄",
+                                    "ws_number": "18",
+                                    "ws_image": "ws_hcc_18"
+                                },
+                                {
+                                    "ws_name": "李姮樂",
+                                    "ws_nickname": "李樂",
+                                    "ws_number": "10",
+                                    "ws_image": "ws_ll_10"
+                                },
+                                {
+                                    "ws_name": "李宜軒",
+                                    "ws_nickname": "圈圈",
+                                    "ws_number": "00",
+                                    "ws_image": "ws_qq_00"
+                                },
+                                {
+                                    "ws_name": "蔡佩螢",
+                                    "ws_nickname": "螢螢",
+                                    "ws_number": "62",
+                                    "ws_image": "ws_yy_62"
+                                }
+                            ]
+                        },{
+                            "ws_type": "WS 第二屆",
+                            "ws_type_total": "1/12",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "王文伶",
+                                    "ws_nickname": "米亞",
+                                    "ws_number": "8",
+                                    "ws_image": "ws_my_8"
+                                }
+                            ]
+                        },{
+                            "ws_type": "鷹援團",
+                            "ws_type_total": "2/6",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "TAKAO",
+                                    "ws_nickname": "TAKAO",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takao"
+                                },
+                                {
+                                    "ws_name": "TAKAME",
+                                    "ws_nickname": "TAKAME",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takame"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "ws_day": "2025/05/18",
+                    "ws_day_name": "日",
+                    "ws_day_data": [
+                        {
+                            "ws_type": "WS 第一屆",
+                            "ws_type_total": "2/15",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "李姮樂",
+                                    "ws_nickname": "李樂",
+                                    "ws_number": "10",
+                                    "ws_image": "ws_ll_10"
+                                },
+                                {
+                                    "ws_name": "蔡佩螢",
+                                    "ws_nickname": "螢螢",
+                                    "ws_number": "62",
+                                    "ws_image": "ws_yy_62"
+                                }
+                            ]
+                        },{
+                            "ws_type": "WS 第二屆",
+                            "ws_type_total": "1/12",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "呂米妮",
+                                    "ws_nickname": "米妮",
+                                    "ws_number": "3",
+                                    "ws_image": "ws_mn_3"
+                                }
+                            ]
+                        },{
+                            "ws_type": "鷹援團",
+                            "ws_type_total": "4/6",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "TAKAO",
+                                    "ws_nickname": "TAKAO",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takao"
+                                },
+                                {
+                                    "ws_name": "TAKAME",
+                                    "ws_nickname": "TAKAME",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takame"
+                                },
+                                {
+                                    "ws_name": "柏澄",
+                                    "ws_nickname": "柏澄",
+                                    "ws_number": "",
+                                    "ws_image": "ws_bai_cheng"
+                                },
+                                {
+                                    "ws_name": "沐妍",
+                                    "ws_nickname": "沐妍",
+                                    "ws_number": "",
+                                    "ws_image": "ws_mu_yan"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "ws_day": "2025/05/20",
+                    "ws_day_name": "二",
+                    "ws_day_data": [
+                        {
+                            "ws_type": "WS 第一屆",
+                            "ws_type_total": "1/15",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "李姮樂",
+                                    "ws_nickname": "李樂",
+                                    "ws_number": "10",
+                                    "ws_image": "ws_ll_10"
+                                }
+                            ]
+                        },{
+                            "ws_type": "WS 第二屆",
+                            "ws_type_total": "0/12",
+                            "ws_type_data": []
+                        },{
+                            "ws_type": "鷹援團",
+                            "ws_type_total": "2/6",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "TAKAO",
+                                    "ws_nickname": "TAKAO",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takao"
+                                },
+                                {
+                                    "ws_name": "TAKAME",
+                                    "ws_nickname": "TAKAME",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takame"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "ws_day": "2025/05/21",
+                    "ws_day_name": "三",
+                    "ws_day_data": [
+                        {
+                            "ws_type": "WS 第一屆",
+                            "ws_type_total": "1/15",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "李姮樂",
+                                    "ws_nickname": "李樂",
+                                    "ws_number": "10",
+                                    "ws_image": "ws_ll_10"
+                                }
+                            ]
+                        },{
+                            "ws_type": "WS 第二屆",
+                            "ws_type_total": "0/12",
+                            "ws_type_data": []
+                        },{
+                            "ws_type": "鷹援團",
+                            "ws_type_total": "4/6",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "TAKAO",
+                                    "ws_nickname": "TAKAO",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takao"
+                                },
+                                {
+                                    "ws_name": "TAKAME",
+                                    "ws_nickname": "TAKAME",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takame"
+                                },
+                                {
+                                    "ws_name": "Matt",
+                                    "ws_nickname": "Matt",
+                                    "ws_number": "",
+                                    "ws_image": "ws_matt"
+                                },
+                                {
+                                    "ws_name": "柏澄",
+                                    "ws_nickname": "柏澄",
+                                    "ws_number": "",
+                                    "ws_image": "ws_bai_cheng"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "ws_day": "2025/05/27",
+                    "ws_day_name": "二",
+                    "ws_day_data": [
+                        {
+                            "ws_type": "WS 第一屆",
+                            "ws_type_total": "1/15",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "李姮樂",
+                                    "ws_nickname": "李樂",
+                                    "ws_number": "10",
+                                    "ws_image": "ws_ll_10"
+                                }
+                            ]
+                        },{
+                            "ws_type": "WS 第二屆",
+                            "ws_type_total": "0/12",
+                            "ws_type_data": []
+                        },{
+                            "ws_type": "鷹援團",
+                            "ws_type_total": "2/6",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "TAKAO",
+                                    "ws_nickname": "TAKAO",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takao"
+                                },
+                                {
+                                    "ws_name": "TAKAME",
+                                    "ws_nickname": "TAKAME",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takame"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "ws_day": "2025/05/28",
+                    "ws_day_name": "三",
+                    "ws_day_data": [
+                        {
+                            "ws_type": "WS 第一屆",
+                            "ws_type_total": "1/15",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "李姮樂",
+                                    "ws_nickname": "李樂",
+                                    "ws_number": "10",
+                                    "ws_image": "ws_ll_10"
+                                }
+                            ]
+                        },{
+                            "ws_type": "WS 第二屆",
+                            "ws_type_total": "0/12",
+                            "ws_type_data": []
+                        },{
+                            "ws_type": "鷹援團",
+                            "ws_type_total": "3/6",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "TAKAO",
+                                    "ws_nickname": "TAKAO",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takao"
+                                },
+                                {
+                                    "ws_name": "TAKAME",
+                                    "ws_nickname": "TAKAME",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takame"
+                                },
+                                {
+                                    "ws_name": "柏澄",
+                                    "ws_nickname": "柏澄",
+                                    "ws_number": "",
+                                    "ws_image": "ws_bai_cheng"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "ws_day": "2025/05/30",
+                    "ws_day_name": "五",
+                    "ws_day_data": [
+                        {
+                            "ws_type": "WS 第一屆",
+                            "ws_type_total": "1/15",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "李姮樂",
+                                    "ws_nickname": "李樂",
+                                    "ws_number": "10",
+                                    "ws_image": "ws_ll_10"
+                                }
+                            ]
+                        },{
+                            "ws_type": "WS 第二屆",
+                            "ws_type_total": "0/12",
+                            "ws_type_data": []
+                        },{
+                            "ws_type": "鷹援團",
+                            "ws_type_total": "2/6",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "TAKAO",
+                                    "ws_nickname": "TAKAO",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takao"
+                                },
+                                {
+                                    "ws_name": "TAKAME",
+                                    "ws_nickname": "TAKAME",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takame"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "ws_day": "2025/05/31",
+                    "ws_day_name": "六",
+                    "ws_day_data": [
+                        {
+                            "ws_type": "WS 第一屆",
+                            "ws_type_total": "1/15",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "李姮樂",
+                                    "ws_nickname": "李樂",
+                                    "ws_number": "10",
+                                    "ws_image": "ws_ll_10"
+                                }
+                            ]
+                        },{
+                            "ws_type": "WS 第二屆",
+                            "ws_type_total": "0/12",
+                            "ws_type_data": []
+                        },{
+                            "ws_type": "鷹援團",
+                            "ws_type_total": "6/6",
+                            "ws_type_data": [
+                                {
+                                    "ws_name": "TAKAO",
+                                    "ws_nickname": "TAKAO",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takao"
+                                },
+                                {
+                                    "ws_name": "TAKAME",
+                                    "ws_nickname": "TAKAME",
+                                    "ws_number": "",
+                                    "ws_image": "ws_takame"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

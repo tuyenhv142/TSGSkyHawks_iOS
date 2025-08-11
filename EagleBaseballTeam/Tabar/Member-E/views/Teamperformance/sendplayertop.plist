@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>playerrate</key>
+		<string>0.294</string>
+		<key>playername</key>
+		<string>魔鷹</string>
+		<key>playerimage</key>
+		<string>moying</string>
+		<key>playerNo</key>
+		<string>1</string>
+	</dict>
+	<dict>
+		<key>playerrate</key>
+		<string>0.283</string>
+		<key>playername</key>
+		<string>王博玄</string>
+		<key>playerimage</key>
+		<string>wangboxuan</string>
+		<key>playerNo</key>
+		<string>2</string>
+	</dict>
+	<dict>
+		<key>playerrate</key>
+		<string>0.280</string>
+		<key>playername</key>
+		<string>王柏融</string>
+		<key>playerimage</key>
+		<string>wangbairong</string>
+		<key>playerNo</key>
+		<string>3</string>
+	</dict>
+	<dict>
+		<key>playerrate</key>
+		<string>0.273</string>
+		<key>playername</key>
+		<string>曾子祐</string>
+		<key>playerimage</key>
+		<string>zengziyou</string>
+		<key>playerNo</key>
+		<string>4</string>
+	</dict>
+	<dict>
+		<key>playerrate</key>
+		<string>0.365</string>
+		<key>playername</key>
+		<string>陳文杰</string>
+		<key>playerimage</key>
+		<string>chenwenjie</string>
+		<key>playerNo</key>
+		<string>5</string>
+	</dict>
+</array>
+</plist>

@@ -1,0 +1,45 @@
+{
+  "members_title": "捕手",
+  "members_data": [
+    {
+      "members_name": "張肇元",
+      "members_number": "29",
+      "members_pos": "捕手",
+      "members_votinghabits": "右投右打",
+      "members_height": "182 CM",
+      "members_weight": "110 KG",
+      "members_birthday": "1997/10/30",
+      "members_first_appearance": "2022/05/22",
+      "members_educational_background": "臺東大學",
+      "members_image": "player_a_29",
+      "members_url": "https://www.cpbl.com.tw/team/person?Acnt=0000006211"
+    },
+    {
+      "members_name": "陳致嘉",
+      "members_number": "33",
+      "members_pos": "捕手",
+      "members_votinghabits": "右投右打",
+      "members_height": "177 CM",
+      "members_weight": "79 KG",
+      "members_birthday": "2002/05/14",
+      "members_first_appearance": "2024/04/30",
+      "members_educational_background": "臺灣體大",
+      "members_image": "player_a_33",
+      "members_url": "https://www.cpbl.com.tw/team/person?Acnt=0000006926"
+    },
+    {
+      "members_name": "陳世嘉",
+      "members_number": "78",
+      "members_pos": "捕手",
+      "members_votinghabits": "右投左打",
+      "members_height": "178 CM",
+      "members_weight": "75 KG",
+      "members_birthday": "2003/06/01",
+      "members_first_appearance": "2024/04/04",
+      "members_educational_background": "臺灣體大",
+      "members_image": "player_a_78",
+      "members_url": "https://www.cpbl.com.tw/team/person?Acnt=0000007064"
+    },
+    
+  ]
+}

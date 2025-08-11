@@ -1,0 +1,98 @@
+//
+//  EGPrefixHeader.pch
+//  EagleBaseballTeam
+//
+//  Created by elvin on 2025/1/21.
+//  Copyright © 2025 NewSoft. All rights reserved.
+//
+
+#ifndef EGPrefixHeader_pch
+#define EGPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "EGBaseViewController.h"
+#import "EGPublicWebViewController.h"
+
+#import <Masonry/Masonry.h>
+#import <IQKeyboardManager.h>
+#import <MJExtension.h>
+#import <AFNetworking.h>
+#import <SDWebImage.h>
+#import <MJRefresh.h>
+#import <MBProgressHUD.h>
+#import <Firebase.h>
+#import <GoogleMaps/GoogleMaps.h>
+#import <GooglePlaces/GooglePlaces.h>
+#import <CoreLocation/CoreLocation.h>
+
+#import "ELCustomPhotoLayout.h"
+#import "UIDevice+DEAddition.h"
+#import "UIView+DEFrame.h"
+#import "UIColor+DExpanded.h"
+#import "UIButton+ELExpandBtn.h"
+#import "NSDictionary+ELEmptyDictionary.h"
+#import "EGEventStoreTool.h"
+#import "WAFNWHTTPSTool.h"
+#import "EGLogInViewController.h"
+#import "EGPublicWebViewController.h"
+//#import "UITableView+XY.h"
+#import "MBProgressHUD+ELAddMB.h"
+#import "UIImage+Extend.h"
+#import "EGLoginUserManager.h"
+#import "EGUserOauthModel.h"
+#import "EGServerAPI.h"
+#import "EGNavigationController.h"
+#import "EGCircleRefreshHeader.h"
+#import "EGAlertViewHelper.h"
+#import "ELAlertController.h"
+#import "EGetTokenViewModel.h"
+#import "ZYNetworkAccessibity.h"
+#import "EGCredentialManager.h"
+#import "EGTopButtonsView.h"
+#import "BKPopReminderView.h"
+#import "EGMemberInfoModel.h"
+#import "ELTmpFileManager.h"
+#import "ELAlbumManager.h"
+
+#define Device_Width  [[UIScreen mainScreen] bounds].size.width
+#define Device_Height [[UIScreen mainScreen] bounds].size.height
+#define ChannelID @"UCVBlrH9PZRWtgrfcrjmXZMA"
+
+#define ScaleW(value) ((value)/375.0f*[UIScreen mainScreen].bounds.size.width)
+#define ScaleH(value) ((value)/667.0f*[UIScreen mainScreen].bounds.size.height)
+
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+
+#define EGLoginStatus @"LoginStatus"
+#define kUserDefaults           [NSUserDefaults standardUserDefaults]
+#define kNotificationCenter     [NSNotificationCenter defaultCenter]
+#define NotificationMessage @"NotificationMessage"
+
+#define FontSize(value) ((value)/375.0f*[UIScreen mainScreen].bounds.size.width)
+
+#define rgba(r,g,b,a)  [UIColor colorWithRed:((r)/255.0) green:((g)/255.0) blue:((b)/255.0) alpha:(a)]
+#define rgba(r,g,b,a)  [UIColor colorWithRed:((r)/255.0) green:((g)/255.0) blue:((b)/255.0) alpha:(a)]
+
+#ifdef DEBUG
+#define ELog(FORMAT, ...) printf("%s:%i\t%s\n",[[[NSString stringWithUTF8String: __FILE__] lastPathComponent] UTF8String], __LINE__,[[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define ELog(FORMAT, ...) nil
+#endif
+
+
+#define DeviceTokenInfo @"deviceTokenNoApnsToken"
+#define FCMTokenInfo @"fcmTokenNoApnsToken"
+#define SETFCMTokenState @"fcmTokenToRelayState"
+//app id
+#define STOREAPPID @"6743694362"
+
+// 16进制设置颜色
+#define ColorRGB(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+
+#endif /* EGPrefixHeader_pch */

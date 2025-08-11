@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<!--    <title>WKWebView示例</title>-->
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+            width: 100%;
+            margin: 0;
+        }
+        h1 {
+            font-family: 'PingFangTC-Semibold';
+            font-size: 16px;
+            color: #333;
+            font-weight: normal;
+            padding: 0px 16px;
+            padding-top: 20px;
+            padding-bottom: 8px;
+            margin: 0;
+        }
+        h2 {
+            font-family: 'PingFangTC-Semibold';
+            font-size: 15px;
+            color: #333;
+            font-weight: normal;
+            padding: 12px 16px;
+            margin: 0px;
+            line-height: 1.6;
+            background-color: rgba(245, 245, 245, 1);
+        }
+        p {
+            padding: 0 16px;
+            margin: 12px 0;
+            line-height: 1.6;
+            font-size: 15px;
+            font-family: 'PingFangTC';
+        }
+        .bold-title {
+            font-family: 'PingFangTC-Semibold';
+        }
+        ul {
+            margin: 0;
+            padding: 0 32px;
+            margin-left: 8px;
+            list-style-type: disc;
+        }
+        li {
+            font-family: 'PingFangTC';
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        button {
+            background-color: #0066cc;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .bold-title {
+            font-family: 'PingFangTC-Semibold';
+        }
+        .content {
+            width: 100%;
+            overflow-x: hidden;
+            padding-bottom: 16px;
+        }
+        .TSG-text { color: rgba(0, 122, 96, 1); }
+        .text-size { font-size: 15px; }
+        .text-bold { font-weight: 700; }
+    </style>
+</head>
+<body>
+<!--    <h1>WKWebView示例</h1>-->
+<!--    <p>这是一个在WKWebView中加载的HTML页面</p>-->
+<!--    <button onclick="showAlert()">点击我</button>-->
+<!--    <p id="demo"></p>-->
+<!--    -->
+<!--    <script>-->
+<!--        function showAlert() {-->
+<!--            document.getElementById("demo").innerHTML = "按钮被点击了! " + new Date().toLocaleString();-->
+<!--            // 调用Swift代码-->
+<!--            window.webkit.messageHandlers.buttonClicked.postMessage("按钮被点击");-->
+<!--        }-->
+<!--    </script>-->
+
+    <div class='content'>
+        <h1>註冊台鋼天鷹 APP 需要提供哪些資訊？</h1>
+        <p>感謝您註冊台鋼天鷹 APP！為了確保帳戶安全、提供完整的球迷服務，以及符合相關法規要求，我們需要您提供部分個人資訊。這些資訊將僅用於官方授權範圍內，並依照 <span class=TSG-text>台鋼天鷹隱私權政策</span> 及 <span class=TSG-text>服務條款</span>進行保護與管理，不會用於未經授權的用途。</p>
+        <p>我們蒐集的資訊與其用途如下：<p>
+        <h2>一、身分證字號</h2>
+        <p class=bold-title>用途：</p>
+        <ul>
+            <li>作為<span class=text-bold>唯一識別資訊</span>，確保每位會員的帳戶安全，防止重複註冊或冒用他人身份。</li>
+            <li>確保您能順利使用 <span class=text-bold>卡籍、票務、購物、會員點數</span>等服務，並確保權益一致。</li>
+            <li>遵循台灣購票實名制規範，確保票務安全與公平性。</li>
+        </ul>
+        <p class=bold-title>隱私保障：</p>
+        <ul>
+            <li><span class=text-bold>您的身分證字號不會公開顯示，亦不會提供給第三方</span>，僅用於帳戶識別與官方用途。</li>
+            <li>註冊後，該資訊無法修改，請確保輸入正確資訊。</li>
+        </ul>
+        <h2>二、密碼</h2>
+        <p class=bold-title>用途：</p>
+        <ul>
+            <li><span class=text-bold>確保帳戶安全，防止未經授權的存取。</span></li>
+            <li>允許您安全登入 APP，使用購票、購物及其他會員專屬服務。</li>
+        </ul>
+        <p class=bold-title>設定要求：</p>
+                <ul>
+                    <li>至少 8 個字元，建議包含英文字母、數字與符號的組合，以提升安全性。</li>
+                    <li><span class=text-bold>請勿與其他平台使用相同密碼</span>，避免潛在的資安風險。</li>
+                </ul>
+        <p class=bold-title>隱私保障：</p>
+                <ul>
+                    <li>密碼以加密方式儲存，不會被任何人直接存取或查看。</li>
+                    <li>忘記密碼時，可透過<span class=text-bold>手機號碼</span>進行重設。</li>
+                </ul>
+        <h2>三、手機號碼</h2>
+        <p class=bold-title>用途：</p>
+                <ul>
+                    <li>作為<span class=text-bold>帳戶驗證機制</span>，在註冊時發送驗證碼確保帳戶安全。</li>
+                    <li>用於<span class=text-bold>密碼找回</span>，當您忘記密碼時，可透過手機號碼進行重設。</li>
+                    <li>讓您即時收到 <span class=text-bold>購票成功通知、交易提醒、會員權益資訊</span>，不錯過重要消息。</li>
+                </ul>
+        <p class=bold-title>隱私保障：</p>
+                <ul>
+                    <li>除非您自行提供，否則您的手機號碼不會對外公開或與其他會員共享。</li>
+                    <li>註冊後，手機號碼可變更，但須重新驗證。</li>
+                </ul>
+        <h2>四、電子信箱</h2>
+        <p class=bold-title>用途：</p>
+                <ul>
+                    <li>作為<span class=text-bold>帳戶驗證與重要通知管道</span>，確保您的帳戶資訊安全。</li>
+                    <li>用於 <span class=text-bold>購票、購物、會員活動通知</span>及官方優惠資訊的發送。</li>
+                </ul>
+        <p class=bold-title>隱私保障：</p>
+                <ul>
+                    <li><span class=text-bold>您的電子信箱不會公開顯示，也不會提供給第三方使用。</span></li>
+                    <li>註冊後，<span class=text-bold>信箱無法修改</span>，請務必填寫常用的電子信箱。</li>
+                </ul>
+        <h2>五、出生日期</h2>
+        <p class=bold-title>用途：</p>
+                <ul>
+                    <li>確保符合 <span class=text-bold>APP 年齡限制規範</sapn>，部分服務可能對特定年齡層開放。</li>
+                    <li>作為<span class=text-bold>會員專屬生日禮或特別活動邀請</span>的依據，提供更個性化的服務。</li>
+                </ul>
+        <p class=bold-title>隱私保障：</p>
+                <ul>
+                    <li>除非您自行提供，否則您的出生日期不會對外公開或與其他會員共享。</li>
+                    <li>註冊後，該資訊<span class=text-bold>無法修改</span>，請確保填寫正確。</li>
+                </ul>
+        <h2>六、性別</h2>
+        <p class=bold-title>用途：</p>
+                <ul>
+                    <li>讓我們提供更適合您的個人化內容與推薦。</li>
+                    <li>可能用於特定會員活動，讓您獲得更符合需求的專屬服務。</li>
+                </ul>
+        <p class=bold-title>隱私保障：</p>
+                <ul>
+                    <li>此資訊僅作為內部分析與服務優化，不會對外公開或與第三方共享。</li>
+                </ul>
+        <h2>隱私權保護承諾</h2>
+        <p class=bold-title> </p>
+                <ul>
+                    <li>我們不會將您的個人資訊提供給第三方，除非依法規要求或獲得您的同意。</li>
+                    <li>所有個人資訊均採取加密儲存，並符合 個人資料保護法及相關資安規範。</li>
+                    <li>您可隨時透過<span class=TSG-text>隱私權政策</span>了解更多資訊，並管理您的個人資料使用權限。</li>
+                </ul>
+        <p>若有任何疑問，請聯絡台鋼天鷹官方客服，我們將竭誠為您服務！</p>
+    </div>
+    
+</body>
+</html>

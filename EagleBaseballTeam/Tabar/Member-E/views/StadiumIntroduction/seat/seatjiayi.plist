@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>section_status</key>
+		<false/>
+		<key>row_content_normal</key>
+		<dict>
+			<key>row_content_normalhalfPrice</key>
+			<integer>300</integer>
+			<key>row_content_normalPrice</key>
+			<integer>400</integer>
+		</dict>
+		<key>row_content_holiday</key>
+		<dict>
+			<key>row_content_holidayPrice</key>
+			<string>450</string>
+			<key>row_content_holidayhalfPrice</key>
+			<string>350</string>
+		</dict>
+		<key>row_content_city</key>
+		<string>嘉義市</string>
+		<key>row_content_header</key>
+		<string>內野全區</string>
+		<key>row_title</key>
+		<string>內野全區</string>
+	</dict>
+	<dict>
+		<key>row_content_holiday</key>
+		<dict>
+			<key>row_content_holidayPrice</key>
+			<string>300</string>
+			<key>row_content_holidayhalfPrice</key>
+			<string>200</string>
+		</dict>
+		<key>row_content_normal</key>
+		<dict>
+			<key>row_content_normalhalfPrice</key>
+			<integer>200</integer>
+			<key>row_content_normalPrice</key>
+			<integer>300</integer>
+		</dict>
+		<key>section_status</key>
+		<false/>
+		<key>row_content_city</key>
+		<string>嘉義市</string>
+		<key>row_content_header</key>
+		<string>外野自由座</string>
+		<key>row_title</key>
+		<string>外野自由座</string>
+	</dict>
+</array>
+</plist>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>section_Header</key>
+		<string>球場資訊：</string>
+		<key>section_content</key>
+		<array>
+			<dict>
+				<key>row_title</key>
+				<string></string>
+				<key>row_content</key>
+				<string>地址：833高雄市鳥松區大埤路113號
+電話：(07)733-6978</string>
+				<key>row_height</key>
+				<integer>40</integer>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>section_Header</key>
+		<string>交通資訊：</string>
+		<key>section_content</key>
+		<array>
+			<dict>
+				<key>row_title</key>
+				<string>1. 大眾運輸</string>
+				<key>row_content</key>
+				<string>搭乘30路、70路、217路、橘7路、黃2路至「棒球場站」</string>
+				<key>row_height</key>
+				<integer>68</integer>
+			</dict>
+			<dict>
+				<key>row_title</key>
+				<string>2. 自行開車 </string>
+				<key>row_content</key>
+				<string>  • 高雄市區-由澄清路北上，至大埤路右轉即可抵達
+  • 鳳山方向-由經武路北上經中正路，至大埤路左轉即可抵達。 
+球場週邊有收費停車場。</string>
+				<key>row_height</key>
+				<integer>128</integer>
+			</dict>
+			<dict>
+				<key>row_title</key>
+				<string>3. 接駁車資訊</string>
+				<key>row_content</key>
+				<string>  • 區間接駁車：70路公車(三多幹線)。 
+  • 搭乘站點建議：大遠百站、衛武營站 (球賽期間原三多路上車點移至中正路上捷運站2號出口)。 
+  • 車班訊息：球賽前1.5小時，每小時有6台車班次加密區間車。 
+  • 費用：搭車費用依交通局規定，並可用一卡通支付。 
+  • 澄清湖球場站訊息：球場下車點於大埤路(廣場前)，散場搭車處於公園路上站牌。</string>
+				<key>row_height</key>
+				<integer>228</integer>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>

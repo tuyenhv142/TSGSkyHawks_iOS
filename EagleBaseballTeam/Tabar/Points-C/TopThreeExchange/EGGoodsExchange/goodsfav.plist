@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>goodstype</key>
+		<integer>1</integer>
+		<key>goodsfavorator</key>
+		<true/>
+		<key>goodsimage</key>
+		<string>jinianqiu</string>
+		<key>goodsopenstatus</key>
+		<integer>0</integer>
+		<key>goodsprice</key>
+		<string>1099</string>
+		<key>goodsName</key>
+		<string>2025春訓紀念球</string>
+	</dict>
+	<dict>
+		<key>goodstype</key>
+		<integer>3</integer>
+		<key>goodsfavorator</key>
+		<true/>
+		<key>goodsimage</key>
+		<string>diaoshi</string>
+		<key>goodsopenstatus</key>
+		<integer>0</integer>
+		<key>goodsprice</key>
+		<string>700</string>
+		<key>goodsName</key>
+		<string>2024 WS 隨身鏡吊飾</string>
+	</dict>
+	<dict>
+		<key>goodstype</key>
+		<integer>1</integer>
+		<key>goodsfavorator</key>
+		<true/>
+		<key>goodsimage</key>
+		<string>XTAIWOLF</string>
+		<key>goodsopenstatus</key>
+		<integer>0</integer>
+		<key>goodsprice</key>
+		<string>2499</string>
+		<key>goodsName</key>
+		<string>2025台鋼天鷹XTAIWOLF球員版長袖帽</string>
+	</dict>
+	<dict>
+		<key>goodstype</key>
+		<integer>1</integer>
+		<key>goodsfavorator</key>
+		<true/>
+		<key>goodsimage</key>
+		<string>renxiang</string>
+		<key>goodsopenstatus</key>
+		<integer>0</integer>
+		<key>goodsprice</key>
+		<string>600</string>
+		<key>goodsName</key>
+		<string>2024 WS 人像立牌</string>
+	</dict>
+	<dict>
+		<key>goodstype</key>
+		<integer>3</integer>
+		<key>goodsfavorator</key>
+		<true/>
+		<key>goodsimage</key>
+		<string>yingyuanshan</string>
+		<key>goodsopenstatus</key>
+		<integer>0</integer>
+		<key>goodsprice</key>
+		<string>300</string>
+		<key>goodsName</key>
+		<string>2024 WS 應援扇</string>
+	</dict>
+	<dict>
+		<key>goodstype</key>
+		<integer>2</integer>
+		<key>goodsfavorator</key>
+		<true/>
+		<key>goodsimage</key>
+		<string>yingyuanshoudeng</string>
+		<key>goodsopenstatus</key>
+		<integer>0</integer>
+		<key>goodsprice</key>
+		<string>500</string>
+		<key>goodsName</key>
+		<string>2024 WS 應援手燈</string>
+	</dict>
+</array>
+</plist>

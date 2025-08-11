@@ -66,6 +66,7 @@
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
 #define EGLoginStatus @"LoginStatus"
+#define EGLoginOnetimeStatus @"LoginOnetimeStatus"
 #define kUserDefaults           [NSUserDefaults standardUserDefaults]
 #define kNotificationCenter     [NSNotificationCenter defaultCenter]
 #define NotificationMessage @"NotificationMessage"

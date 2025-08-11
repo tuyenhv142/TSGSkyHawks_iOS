@@ -38,6 +38,7 @@
 
 #define SERVERXiongYing @"https://www.tsghawks.com"
 #define SERVERXiongYingTest @"http://20.189.240.127"
+#define SERVER_URL_TICKET @"https://ticket-platform.tsgb2c.net/api/v1"
 
 
 @implementation EGServerAPI
@@ -45,6 +46,13 @@
 + (NSString *)getIPURLString:(NSString *)api
 {
     NSString *url = [NSString stringWithFormat:@"%@/%@", SERVER_URL, api];
+//    return [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    return [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+}
+
++ (NSString *)getIPTicketURLString:(NSString *)api
+{
+    NSString *url = [NSString stringWithFormat:@"%@/%@", SERVER_URL_TICKET, api];
 //    return [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     return [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
 }
@@ -185,6 +193,21 @@
 + (NSString*)signIn_api
 {
     return [self getIPURLString:@"client/sign-in"];
+}
+/**
+ * Ticket登入
+ */
++ (NSString*)signInTicket_api
+{
+    return [self getIPTicketURLString:@"members/sign-in"];
+}
+
+/**
+ * getTokenForWeb
+ */
++ (NSString*)getOneTimeToken
+{
+    return [self getIPTicketURLString:@"members/one-time-token"];
 }
 /**
  * 注册检验

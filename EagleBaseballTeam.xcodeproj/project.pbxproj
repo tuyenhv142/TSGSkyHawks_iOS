@@ -683,7 +683,7 @@
 		D8D27C6E2D67108800443D3F /* EGMemberInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGMemberInfoViewController.h; sourceTree = "<group>"; };
 		D8D27C6F2D67108800443D3F /* EGMemberInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGMemberInfoViewController.m; sourceTree = "<group>"; };
 		D8D6E2672D93F2A30022022E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		D8D73CC62D3E3BC4007B0190 /* 台鋼雄鷹.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "台鋼雄鷹.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8D73CC62D3E3BC4007B0190 /* 台鋼天鷹.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "台鋼天鷹.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8DA83BC2DE941D500EE64A8 /* EGMessagesFBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGMessagesFBView.h; sourceTree = "<group>"; };
 		D8DA83BD2DE941D500EE64A8 /* EGMessagesFBView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGMessagesFBView.m; sourceTree = "<group>"; };
 		D8DCCC812D9A655A00330C38 /* EGrouPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGrouPhotoViewController.h; sourceTree = "<group>"; };
@@ -1683,7 +1683,7 @@
 		D8D73CC72D3E3BC4007B0190 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D8D73CC62D3E3BC4007B0190 /* 台鋼雄鷹.app */,
+				D8D73CC62D3E3BC4007B0190 /* 台鋼天鷹.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1732,7 +1732,7 @@
 			);
 			name = EagleBaseballTeam;
 			productName = EagleBaseballTeam;
-			productReference = D8D73CC62D3E3BC4007B0190 /* 台鋼雄鷹.app */;
+			productReference = D8D73CC62D3E3BC4007B0190 /* 台鋼天鷹.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -2155,7 +2155,7 @@
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "我們需要訪問您的日曆權限來添加賽事提醒功能。";
 				INFOPLIST_KEY_NSCameraUsageDescription = "我們需要訪問您的相機權限。";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "我們需要訪問您的位置來提供相關服務如開賽進場，點數贈送等。";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "我們需要訪問您的位置來提供相關服務如開賽進場，點數贈送等。";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "允許地圖App定位";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = 23456;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "我們需要訪問您的相冊写入權限。";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "我們需要訪問您的相冊權限。";
@@ -2238,8 +2238,8 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tsg.hawksbaseballIT;
-				PRODUCT_NAME = "台鋼雄鷹";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsg.skyhawks;
+				PRODUCT_NAME = "台鋼天鷹";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -2275,7 +2275,7 @@
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "我們需要訪問您的日曆權限來添加賽事提醒功能。";
 				INFOPLIST_KEY_NSCameraUsageDescription = "我們需要訪問您的相機權限。";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "我們需要訪問您的位置來提供相關服務如開賽進場，點數贈送等。";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "我們需要訪問您的位置來提供相關服務如開賽進場，點數贈送等。";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "允許地圖App定位";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = 23456;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "我們需要訪問您的相冊写入權限。";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "我們需要訪問您的相冊權限。";
@@ -2358,8 +2358,8 @@
 					"-weak_framework",
 					"\"UserNotifications\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tsg.hawksbaseballIT;
-				PRODUCT_NAME = "台鋼雄鷹";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsg.skyhawks;
+				PRODUCT_NAME = "台鋼天鷹";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

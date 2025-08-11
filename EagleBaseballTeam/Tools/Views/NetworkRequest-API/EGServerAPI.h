@@ -61,6 +61,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (NSString*)signIn_api;
 /**
+ * Ticket登入
+ */
++ (NSString*)signInTicket_api;
+/**
+ * getOnetimeToken
+ */
++ (NSString*)getOneTimeToken;
+/**
  * 注册检验
  */
 + (NSString*)checkPhone_api:(NSString *)phone;

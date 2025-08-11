@@ -23,6 +23,21 @@
 }
 @end
 
+@implementation EGUserOneTimeModel
+
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key
+{
+    if ([key isEqualToString:@"id"]) {
+        _ID = value;
+    }
+}
+
++ (NSDictionary *)mj_replacedKeyFromPropertyName
+{
+    return @{@"ID":@"id"};
+}
+@end
+
 
 @implementation EGRelayTokenModel
 
@@ -42,12 +57,28 @@
 {
     return @{@"ID":@"id"};
 }
+@end
 
+@implementation UserOneTimeInfomationModel
+
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key
+{
+    if ([key isEqualToString:@"id"]) {
+        _ID = value;
+    }
+}
+
++ (NSDictionary *)mj_replacedKeyFromPropertyName
+{
+    return @{@"ID":@"id"};
+}
 
 
 @end
 
+@implementation OnetimeToken
 
+@end
 
 @implementation MemberInfomationModel
 //将没有的key 转换为空字串

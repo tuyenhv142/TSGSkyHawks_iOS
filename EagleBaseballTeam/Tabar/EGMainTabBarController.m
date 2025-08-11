@@ -151,7 +151,7 @@ API_AVAILABLE(ios(13.0))
 {
     [super viewDidAppear:animated];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self checkAppVersion];
+//        [self checkAppVersion];
     });
     
 }
@@ -364,7 +364,7 @@ API_AVAILABLE(ios(13.0))
             NSString *state = [kUserDefaults objectForKey:SETFCMTokenState];
             if (!state) {
                 [[EGetTokenViewModel sharedManager] getAuthForCRM];
-                [self checkAppVersion];
+//                [self checkAppVersion];
             }
             
         } else {//No network connection

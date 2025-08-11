@@ -492,11 +492,11 @@
         return;
     }
     
-    NSDictionary *dictUser = [kUserDefaults objectForKey:@"TokenRefreshLogIn"];
-    if (![dictUser[@"account"] isEqualToString:self.accountTextField.text] && dictUser) {
-        [[EGAlertViewHelper sharedManager] alertViewColor:1 message:@"基於安全考量，本裝置已綁定一組會員帳號"];
-        return;
-    }
+//    NSDictionary *dictUser = [kUserDefaults objectForKey:@"TokenRefreshLogIn"];
+//    if (![dictUser[@"account"] isEqualToString:self.accountTextField.text] && dictUser) {
+//        [[EGAlertViewHelper sharedManager] alertViewColor:1 message:@"基於安全考量，本裝置已綁定一組會員帳號"];
+//        return;
+//    }
     
     if (!self.rememberBtn.selected) {
         [kUserDefaults removeObjectForKey:@"remberLogIn"];
@@ -529,7 +529,7 @@
     }
     [MBProgressHUD showMessage:@""];
     [[WAFNWHTTPSTool sharedManager] getWithURL:[EGServerAPI checkPhoneRegister_api:self.accountTextField.text] parameters:@{} headers:dict_header success:^(NSDictionary * _Nonnull response) {
-            
+            [weakSelf loginOneTimeAction];
             [weakSelf loginAction];
         } failure:^(NSError * _Nonnull error) {
             [MBProgressHUD hideHUD];
@@ -566,6 +566,7 @@
         
         [strongSelf getDataForUser];
         
+        
         if (weakSelf.logInBlock) {
             weakSelf.logInBlock();
         }
@@ -588,6 +589,94 @@
             }
         }
     }];
+}
+
+-(void)loginOneTimeAction
+{
+    NSDictionary *headerDict = @{@"Accept": @"application/json",  // 添加 Accept 头
+                   @"Content-Type": @"application/json",  // 添加 Content-Type 头
+                                 @"x-company-code":@"newretail"
+    };
+    WS(weakSelf);
+    NSDictionary *dict = @{
+        @"account": self.accountTextField.text,
+        @"password": self.pswdTextField.text};
+    __strong __typeof(weakSelf)strongSelf = weakSelf;
+    [[WAFNWHTTPSTool sharedManager] postWithURL:[EGServerAPI signInTicket_api] parameters:dict headers:headerDict success:^(NSDictionary * _Nonnull response) {
+        [MBProgressHUD hideHUD];
+        
+        NSDictionary *dataDict = response;
+        UserOneTimeInfomationModel *userModel = [UserOneTimeInfomationModel mj_objectWithKeyValues:dataDict];
+        [EGLoginUserManager saveUserOnetimeInfomation:userModel];
+        
+//        ELog(@"%@", dataDict)
+//        
+//        UserOneTimeInfomationModel *model = [EGLoginUserManager getUserOnetimeInfomation];
+//        ELog(@"%@", model.accessToken)
+        [strongSelf getOnetimeToken];
+        
+//        if (weakSelf.logInBlock) {
+//            weakSelf.logInBlock();
+//        }
+        
+//        [kUserDefaults setObject:@{@"account":self.accountTextField.text,@"password":self.pswdTextField.text} forKey:@"TokenRefreshLogIn"];
+//        [kUserDefaults synchronize];
+        
+//        [weakSelf dismissViewControllerAnimated:true completion:^{
+//            
+//        }];
+        
+    } failure:^(NSError * _Nonnull error) {
+        [MBProgressHUD hideHUD];
+        if (error) {
+            NSData *errorData = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey];
+            if (errorData) {
+                NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:errorData options:kNilOptions error:&error];
+                NSString *message = dictionary[@"message"];
+                [[EGAlertViewHelper sharedManager] alertViewColor:1 message:message];
+                ELog(@"%@", message)
+            }
+        }
+    }];
+}
+
+-(void)getOnetimeToken
+{
+    WS(weakSelf);
+//    __strong __typeof(weakSelf)strongSelf = weakSelf;
+    UserOneTimeInfomationModel *model = [EGLoginUserManager getUserOnetimeInfomation];
+    if (!model.accessToken) {
+        NSLog(@"accessToken is nil!");
+        return;
+    }
+    if (!model.refreshToken) {
+        NSLog(@"refreshToken is nil!");
+        return;
+    }
+
+    NSString *tokenString = [NSString stringWithFormat:@"Bearer %@", model.accessToken];
+    NSDictionary *dict_header = @{@"Authorization": tokenString,
+                                  @"x-company-code": @"newretail"};
+
+    NSDictionary *dict = @{@"refreshToken": model.refreshToken};
+
+    
+    [[WAFNWHTTPSTool sharedManager] postWithURL:[EGServerAPI getOneTimeToken] parameters:dict headers:dict_header success:^(NSDictionary * _Nonnull response) {
+        [MBProgressHUD hideHUD];
+        NSDictionary *dataDict = response;
+        
+        OnetimeToken *model = [OnetimeToken mj_objectWithKeyValues:dataDict];
+        [EGLoginUserManager saveOnetimeToken:model];
+        
+        [[NSNotificationCenter defaultCenter]
+                postNotificationName:@"checkbeaconNotification"
+                object:self];
+        ELog(@"%@", model.oneTimeToken)
+//        [strongSelf mobile_crm_API:[dataDict objectOrNilForKey:@"Name"]];
+        
+        } failure:^(NSError * _Nonnull error) {
+            ELog(@"%@", error)
+        }];
 }
 
 

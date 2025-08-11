@@ -60,6 +60,8 @@
         webVc.view.frame = self.view.bounds;
     [self.view addSubview:webVc.view];
         [webVc didMoveToParentViewController:self];
+    
+    
 //    UIView *bView = [[UIView alloc] initWithFrame:CGRectMake(0, [UIDevice de_navigationFullHeight], Device_Width, Device_Height)];
 //    bView.backgroundColor = rgba(245, 245, 245, 1);
 //    [self.view addSubview:bView];

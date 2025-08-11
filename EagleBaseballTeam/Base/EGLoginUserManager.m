@@ -15,9 +15,11 @@
 
 
 static NSString * const KeyUserInfoInfo = @"userInfo";
+static NSString * const KeyUserOnetimeInfoInfo = @"userOnetimeInfo";
 static NSString * const KeyRelaytoken = @"relaytoken";
 static NSString * const KeyOauthInfo = @"oauthInfo";
 static NSString * const KeyMemberInfo = @"MemberInfo";
+static NSString * const KeyOnetimeToken = @"OnetimeToken";
 static NSString * const KeyMemberInfoPoint = @"MemberInfoPoint";
 
 @implementation EGLoginUserManager
@@ -115,6 +117,23 @@ static NSString * const KeyMemberInfoPoint = @"MemberInfoPoint";
     }
 }
 
+#pragma mark ==== OauthOneTime
++(EGUserOneTimeModel *)getOauthOneTimeDataModel
+{
+    NSDictionary *infoDic = [[NSUserDefaults standardUserDefaults] objectForKey:KeyUserOnetimeInfoInfo];
+    EGUserOneTimeModel *userInfoModel = [EGUserOneTimeModel mj_objectWithKeyValues:infoDic];
+    return userInfoModel;
+}
+
++ (void)saveOauthOneTimeDataModel:(EGUserOneTimeModel *)userInfo
+{
+    if (userInfo)
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:userInfo.mj_keyValues forKey:KeyUserOnetimeInfoInfo];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+}
+
 
 #pragma mark ==== 用户信息
 +(UserInfomationModel *)getUserInfomation
@@ -131,6 +150,25 @@ static NSString * const KeyMemberInfoPoint = @"MemberInfoPoint";
         [kUserDefaults setValue:@"YES" forKey:EGLoginStatus];
         [kUserDefaults synchronize];
         [[NSUserDefaults standardUserDefaults] setObject:userInfo.mj_keyValues forKey:KeyUserInfoInfo];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+}
+
+#pragma mark ==== 用户信息
++(UserOneTimeInfomationModel *)getUserOnetimeInfomation
+{
+    NSDictionary *infoDic = [[NSUserDefaults standardUserDefaults] objectForKey:KeyUserOnetimeInfoInfo];
+    UserOneTimeInfomationModel *userInfoModel = [UserOneTimeInfomationModel mj_objectWithKeyValues:infoDic];
+    return userInfoModel;
+}
+
++ (void)saveUserOnetimeInfomation:(UserOneTimeInfomationModel *)userInfo
+{
+    if (userInfo)
+    {
+        [kUserDefaults setValue:@"YES" forKey:EGLoginOnetimeStatus];
+        [kUserDefaults synchronize];
+        [[NSUserDefaults standardUserDefaults] setObject:userInfo.mj_keyValues forKey:KeyUserOnetimeInfoInfo];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
@@ -155,6 +193,28 @@ static NSString * const KeyMemberInfoPoint = @"MemberInfoPoint";
     if (userInfo)
     {
         [[NSUserDefaults standardUserDefaults] setObject:userInfo.mj_keyValues forKey:KeyMemberInfo];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+}
+
+#pragma mark ==== Member infomation
+/**
+ * 会员信息获取
+ */
++(OnetimeToken *)getOnetimeToken
+{
+    NSDictionary *infoDic = [[NSUserDefaults standardUserDefaults] objectForKey:KeyOnetimeToken];
+    OnetimeToken *userInfoModel = [OnetimeToken mj_objectWithKeyValues:infoDic];
+    return userInfoModel;
+}
+/**
+ * 会员信息保存
+ */
++ (void)saveOnetimeToken:(OnetimeToken *)userInfo
+{
+    if (userInfo)
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:userInfo.mj_keyValues forKey:KeyOnetimeToken];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }

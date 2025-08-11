@@ -23,6 +23,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface EGUserOneTimeModel : NSObject
+
+@property (nonatomic,copy) NSString *ID;
+@property (nonatomic,copy) NSString *refreshToken;
+@property (nonatomic,copy) NSString *accessToken;
+@property (nonatomic,copy) NSString *email;
+@property (nonatomic,copy) NSString *name;
+
+@end
+
 @interface EGRelayTokenModel : NSObject
 @property (nonatomic,copy) NSString *refresh_token;
 @property (nonatomic,copy) NSString *refresh_token_expired;
@@ -43,6 +53,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface UserOneTimeInfomationModel : NSObject
+
+@property (nonatomic,copy) NSString *ID;
+@property (nonatomic,copy) NSString *refreshToken;
+@property (nonatomic,copy) NSString *accessToken;
+@property (nonatomic,copy) NSString *email;
+@property (nonatomic,copy) NSString *name;
+
+@end
+
 
 @interface MemberInfomationModel : NSObject
 
@@ -52,6 +72,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSString *Birthday;
 @property (nonatomic,copy) NSString *Gender;
 @property (nonatomic,strong) NewsoftExtraData *NewsoftExtraData;
+
+@end
+
+@interface OnetimeToken : NSObject
+
+@property (nonatomic,copy) NSString *oneTimeToken;
+@property (nonatomic,assign) NSInteger expiresIn;
 
 @end
 

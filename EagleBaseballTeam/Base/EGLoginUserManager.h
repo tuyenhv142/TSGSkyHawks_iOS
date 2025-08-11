@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class EGUserOauthModel,UserInfomationModel,MemberInfomationModel,EGRelayTokenModel,EGMemberInfoModel;
+@class EGUserOauthModel,EGUserOneTimeModel,UserInfomationModel,UserOneTimeInfomationModel,MemberInfomationModel,OnetimeToken,EGRelayTokenModel,EGMemberInfoModel;
 
 @interface EGLoginUserManager : NSObject
 
@@ -46,6 +46,17 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)saveOauthDataModel:(EGUserOauthModel *)userInfo;
 
+
+#pragma mark ==== OauthOnetime
+/**
+ API 是  client / sigin_up  的使用
+ */
++(EGUserOneTimeModel *)getOauthOnetimeDataModel;
+/**
+ API 是  client / sigin_up  的使用
+ */
++ (void)saveOauthOnetimeDataModel:(EGUserOneTimeModel *)userInfo;
+
 #pragma mark ==== LogIn
 /**
  API 是 basic / member 的使用
@@ -55,6 +66,17 @@ NS_ASSUME_NONNULL_BEGIN
  API 是 basic / member 的使用
  */
 + (void)saveUserInfomation:(UserInfomationModel *)userInfo;
+
+
+#pragma mark ==== LogInOnetime
+/**
+ API 是 basic / member 的使用
+ */
++(UserOneTimeInfomationModel *)getUserOnetimeInfomation;
+/**
+ API 是 basic / member 的使用
+ */
++ (void)saveUserOnetimeInfomation:(UserOneTimeInfomationModel *)userInfo;
 
 
 #pragma mark ==== Member infomation
@@ -67,6 +89,15 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)saveMemberInfomation:(MemberInfomationModel *)userInfo;
 
+#pragma mark ==== OnetimeToken
+/**
+ * 会员信息获取
+ */
++(OnetimeToken *)getOnetimeToken;
+/**
+ * 会员信息保存
+ */
++ (void)saveOnetimeToken:(OnetimeToken *)userInfo;
 
 
 #pragma mark ==== 中继 服务器tokenModel

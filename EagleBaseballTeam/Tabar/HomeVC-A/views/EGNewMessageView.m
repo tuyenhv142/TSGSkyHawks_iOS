@@ -162,20 +162,46 @@
 }
 
 
+//-(void)getDataForTsghawks
+//{
+//    WS(weakSelf);
+//    NSString *username = @"newsoftapp";
+//    NSString *password = @"Y21P 5Zsd EtAK dohZ 4WQo XA5L";
+//    NSString *url = @"https://www.tsghawks.com/wp-json/wp/v2/posts?per_page=4&order=desc&status=publish";
+//    NSString *loginString = [NSString stringWithFormat:@"%@:%@", username, password];
+//    NSData *loginData = [loginString dataUsingEncoding:NSUTF8StringEncoding];
+//    NSString *base64LoginString = [loginData base64EncodedStringWithOptions:0];
+//    NSString *authorizationHeaderValue = [NSString stringWithFormat:@"Basic %@", base64LoginString];
+//     
+//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+//    [manager.requestSerializer setValue:authorizationHeaderValue forHTTPHeaderField:@"Authorization"];
+//    [manager GET:url parameters:nil headers:@{} progress:^(NSProgress * _Nonnull downloadProgress) {
+//            
+//        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//            NSArray *array = responseObject;
+//            weakSelf.dataArray = array;
+//            [weakSelf.mainCollectionView reloadData];
+////            NSLog(@"-----%@",responseObject);
+//        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//            
+//        }];
+//
+//}
+
 -(void)getDataForTsghawks
 {
     WS(weakSelf);
-    NSString *username = @"newsoftapp";
-    NSString *password = @"Y21P 5Zsd EtAK dohZ 4WQo XA5L";
-    NSString *url = @"https://www.tsghawks.com/wp-json/wp/v2/posts?per_page=4&order=desc&status=publish";
-    NSString *loginString = [NSString stringWithFormat:@"%@:%@", username, password];
-    NSData *loginData = [loginString dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *base64LoginString = [loginData base64EncodedStringWithOptions:0];
-    NSString *authorizationHeaderValue = [NSString stringWithFormat:@"Basic %@", base64LoginString];
+    NSString *url = @"http://20.189.240.127/wp-json/wp/v2/posts?per_page=4&orderby=date&order=desc";
      
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    // Cho phép chứng chỉ không hợp lệ
+    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+    securityPolicy.allowInvalidCertificates = YES;
+    securityPolicy.validatesDomainName = NO; // Không kiểm tra tên miền
+    manager.securityPolicy = securityPolicy;
+    //
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-    [manager.requestSerializer setValue:authorizationHeaderValue forHTTPHeaderField:@"Authorization"];
     [manager GET:url parameters:nil headers:@{} progress:^(NSProgress * _Nonnull downloadProgress) {
             
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -184,7 +210,7 @@
             [weakSelf.mainCollectionView reloadData];
 //            NSLog(@"-----%@",responseObject);
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            
+            ELog(@"%@",error)
         }];
 
 }

@@ -6,6 +6,7 @@
 //
 
 #import "EGBuyTicksController.h"
+#import <WebKit/WebKit.h>
 
 #import "EGMainTabBarController.h"
 
@@ -15,6 +16,7 @@
 @property (nonatomic,strong)UIView *baseView;
 @property (nonatomic,strong)UIImageView *imgView;
 @property (nonatomic,strong)UIButton *byticks;
+@property (nonatomic, assign) BOOL lastIsLogin;
 @end
 
 @implementation EGBuyTicksController
@@ -23,6 +25,45 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    BOOL currentIsLogin = [EGLoginUserManager isLogIn];
+    if (currentIsLogin != self.lastIsLogin) {
+        self.lastIsLogin = currentIsLogin;
+        [self loadTicketWeb];
+    }
+}
+
+- (void)loadTicketWeb {
+    // Xoá các subview cũ (nếu cần)
+    for (UIViewController *vc in self.childViewControllers) {
+        [vc.view removeFromSuperview];
+        [vc removeFromParentViewController];
+    }
+
+    OnetimeToken *model = [EGLoginUserManager getOnetimeToken];
+    EGPublicWebViewController *webVc = [[EGPublicWebViewController alloc] init];
+
+    if ([EGLoginUserManager isLogIn]) {
+        webVc.webUrl = [NSString stringWithFormat:
+            @"https://ticket.tsgskyhawks.com/#one_time_token=%@",
+            model.oneTimeToken];
+    } else {
+        // Xóa session + cookie
+        WKWebsiteDataStore *dataStore = [WKWebsiteDataStore defaultDataStore];
+        [dataStore fetchDataRecordsOfTypes:[WKWebsiteDataStore allWebsiteDataTypes]
+                         completionHandler:^(NSArray<WKWebsiteDataRecord *> *records) {
+            for (WKWebsiteDataRecord *record in records) {
+                [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:record.dataTypes
+                                                          forDataRecords:@[record]
+                                                       completionHandler:^{}];
+            }
+        }];
+        webVc.webUrl = @"https://ticket.tsgskyhawks.com";
+    }
+
+    [self addChildViewController:webVc];
+    webVc.view.frame = self.view.bounds;
+    [self.view addSubview:webVc.view];
+    [webVc didMoveToParentViewController:self];
 }
 
 - (void)viewDidLoad {
@@ -35,6 +76,7 @@
 //    [leftBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
 //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
     [self setupUI];
+    
     
     self.tabBarController.delegate = self;
     
@@ -54,13 +96,31 @@
 -(void)setupUI
 {
     
-    EGPublicWebViewController *webVc = [[EGPublicWebViewController alloc] init];
-        webVc.webUrl = @"https://ticket.tsgskyhawks.com";
-    [self addChildViewController:webVc];
-        webVc.view.frame = self.view.bounds;
-    [self.view addSubview:webVc.view];
-        [webVc didMoveToParentViewController:self];
-    
+    self.lastIsLogin = [EGLoginUserManager isLogIn];
+    [self loadTicketWeb];
+//    OnetimeToken *model = [EGLoginUserManager getOnetimeToken];
+//    
+//    EGPublicWebViewController *webVc = [[EGPublicWebViewController alloc] init];
+//    if ([EGLoginUserManager isLogIn]) {
+//            // Đã đăng nhập → load trang cho user đã login
+//        webVc.webUrl = [NSString stringWithFormat:@"https://ticket.tsgskyhawks.com/#one_time_token=%@", model.oneTimeToken];
+//    } else {
+//        WKWebsiteDataStore *dataStore = [WKWebsiteDataStore defaultDataStore];
+//            [dataStore fetchDataRecordsOfTypes:[WKWebsiteDataStore allWebsiteDataTypes]
+//                             completionHandler:^(NSArray<WKWebsiteDataRecord *> *records) {
+//                for (WKWebsiteDataRecord *record in records) {
+//                    [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:record.dataTypes
+//                                                              forDataRecords:@[record]
+//                                                           completionHandler:^{}];
+//                }
+//            }];
+//        webVc.webUrl = @"https://ticket.tsgskyhawks.com";
+//    }
+//    [self addChildViewController:webVc];
+//        webVc.view.frame = self.view.bounds;
+//    [self.view addSubview:webVc.view];
+//        [webVc didMoveToParentViewController:self];
+//    
     
 //    UIView *bView = [[UIView alloc] initWithFrame:CGRectMake(0, [UIDevice de_navigationFullHeight], Device_Width, Device_Height)];
 //    bView.backgroundColor = rgba(245, 245, 245, 1);

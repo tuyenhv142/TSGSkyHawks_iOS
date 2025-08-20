@@ -350,7 +350,7 @@ return self.MtableView;
     [bt setTitleColor:rgba(115, 115, 115, 1) forState:UIControlStateNormal];
     [bt setSelected:NO];
     [self.topView addSubview:bt];
-    [bt setColor:rgba(0, 122, 96, 1)];
+    [bt setColor:rgba(0, 121, 192, 1)];
     self.wingstars_bt = bt;
     [bt mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(self.fansmusic_bt.mas_right).offset(ScaleW(20));
@@ -370,7 +370,7 @@ return self.MtableView;
     [bt setTitleColor:rgba(115, 115, 115, 1) forState:UIControlStateNormal];
     [bt setSelected:NO];
     [self.topView addSubview:bt];
-    [bt setColor:rgba(0, 122, 96, 1)];
+    [bt setColor:rgba(0, 121, 192, 1)];
     self.fansquan_bt = bt;
     [bt mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(self.wingstars_bt.mas_right).offset(ScaleW(20));
@@ -476,7 +476,7 @@ return self.MtableView;
         case 50001:
         {
             [self.fansmusic_bt setSelected:YES];
-            [self.fansmusic_bt setColor:rgba(0, 122, 96, 1)];
+            [self.fansmusic_bt setColor:rgba(0, 121, 192, 1)];
             self.fansmusicView.hidden = NO;
             
             self.type = 0;
@@ -486,7 +486,7 @@ return self.MtableView;
         case 50002:
         {
             [self.wingstars_bt setSelected:YES];
-            [self.wingstars_bt setColor:rgba(0, 122, 96, 1)];
+            [self.wingstars_bt setColor:rgba(0, 121, 192, 1)];
             self.wingstarsView.hidden = NO;
             self.type = 1;
             [self initgirlInfo];
@@ -495,7 +495,7 @@ return self.MtableView;
         case 50003:
         {
             [self.fansquan_bt setSelected:YES];
-            [self.fansquan_bt setColor:rgba(0, 122, 96, 1)];
+            [self.fansquan_bt setColor:rgba(0, 121, 192, 1)];
             self.fansquanView.hidden = NO;
             self.type = 2;
             [self initgirlInfo];

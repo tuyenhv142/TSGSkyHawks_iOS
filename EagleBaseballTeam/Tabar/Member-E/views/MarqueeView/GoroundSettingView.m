@@ -44,6 +44,9 @@
 
 @property (nonatomic,strong)UICollectionView *playerView;
 
+@property (nonatomic, strong) NSArray<NSString *> *players;
+
+
 @end
 
 
@@ -57,7 +60,24 @@
 //    self.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.2];
     if (self) {
         [self createUI];
-        self.All_Array = [NSMutableArray new];
+        
+        self.All_Array = [NSMutableArray arrayWithArray:@[
+            @{@"playeritem": @{@"CHName": @"陳建禎"}},
+            @{@"playeritem": @{@"CHName": @"彭浩銘"}},
+            @{@"playeritem": @{@"CHName": @"張庭輔"}},
+            @{@"playeritem": @{@"CHName": @"鄭博升"}},
+            @{@"playeritem": @{@"CHName": @"林聖恩"}},
+            @{@"playeritem": @{@"CHName": @"呂慶鴻"}},
+            @{@"playeritem": @{@"CHName": @"陳玠廷"}},
+            @{@"playeritem": @{@"CHName": @"禹良聖"}},
+            @{@"playeritem": @{@"CHName": @"Stijn Van Schie"}},
+            @{@"playeritem": @{@"CHName": @"Rik van Solkema"}},
+            @{@"playeritem": @{@"CHName": @"柯宗甫"}},
+            @{@"playeritem": @{@"CHName": @"許睿恩"}},
+            @{@"playeritem": @{@"CHName": @"Magloire Mayaula"}}
+        ]];
+
+//        self.All_Array = [NSMutableArray new];
                 
     }
     return self;
@@ -269,7 +289,7 @@
         make.height.mas_equalTo(ScaleW(50));
     }];
     
-    
+
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;//竖直滚动
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
@@ -1047,15 +1067,19 @@
 {
     return 1;
 }
+//ẩn data từ api start
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return self.All_Array.count;
 }
 
+//null
+
 //// 4. 设置 footer 大小
 //- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
 //    return CGSizeMake(collectionView.frame.size.width, 0); // 设置高度为50
 //}
+//null
 
 - ( UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -1065,60 +1089,90 @@
         NSDictionary *All_dic = [self.All_Array objectAtIndex:indexPath.item];
         NSDictionary*dic = [All_dic objectForKey:@"playeritem"];
         
-        if([[All_dic objectForKey:@"hightlight"] intValue]==0){
-            cell.titleLB.textColor = UIColor.whiteColor;
+//        NSLog(@"index: %ld, dic: %@", (long)indexPath.item, dic);
+//        if([[All_dic objectForKey:@"hightlight"] intValue]==0){
+//            cell.titleLB.textColor = UIColor.whiteColor;
+//            cell.baseView.backgroundColor = [UIColor colorWithRed:16.0/255.0 green:38.0/255.0 blue:73.0/255 alpha:1.0];
+//        }
+//        else{
             cell.baseView.backgroundColor = [UIColor colorWithRed:16.0/255.0 green:38.0/255.0 blue:73.0/255 alpha:1.0];
-        }
-        else{
-            cell.baseView.backgroundColor = UIColor.whiteColor;
-            cell.titleLB.textColor = UIColor.blackColor;
-        }
+            cell.titleLB.textColor = UIColor.whiteColor;
+//        }
         
         [cell setInfo:dic];
     }
     return cell;
 }
+//ẩn data từ api end
 //选中 collectionView
+
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{    
-    [self.All_Array removeAllObjects];
-    for(int i=0;i<self.All_playerArray.count;i++)
-    {
-        self.All_ArrayDic = [NSMutableDictionary new];
-        [self.All_ArrayDic setObject:[self.All_playerArray objectAtIndex:i] forKey:@"playeritem"];
-        [self.All_ArrayDic setObject:@"0" forKey:@"hightlight"];
-        [self.All_Array addObject:self.All_ArrayDic];
+{
+    for (int i = 0; i < self.All_Array.count; i++) {
+        NSMutableDictionary *dict = [self.All_Array[i] mutableCopy];
+        dict[@"hightlight"] = @"0";
+        self.All_Array[i] = dict;
     }
-    
-    if(indexPath.item<self.All_playerArray.count)
-    {
-        NSDictionary *dic = [self.All_playerArray objectAtIndex:indexPath.item];
-        [self.settingDic setObject:[dic objectForKey:@"CHName"] forKey:@"playername"];
-        [self.settingDic setObject:[dic objectForKey:@"UniformNo"] forKey:@"playerNO"];
-        
-        NSMutableDictionary *info = [NSMutableDictionary new];
-        [info setObject:[self.All_playerArray objectAtIndex:indexPath.item] forKey:@"playeritem"];
-        [info setObject:@"1" forKey:@"hightlight"];
-        [self.All_Array replaceObjectAtIndex:indexPath.item withObject:info];
-        
-        [self.playerView reloadData];
+
+    if (indexPath.item < self.All_Array.count) {
+        NSMutableDictionary *dict = [self.All_Array[indexPath.item] mutableCopy];
+        dict[@"hightlight"] = @"1";
+        self.All_Array[indexPath.item] = dict;
+
+        NSDictionary *player = dict[@"playeritem"];
+        NSString *playerName = player[@"CHName"];
+        self.SettingContentString.text = playerName;
+
+        [self.settingDic setObject:playerName forKey:@"playername"];
     }
-    
-    
-    NSString *player_name = [self.settingDic objectForKey:@"playername"];
-    NSString *player_num = [self.settingDic objectForKey:@"playerNO"];
-    NSString *meg_str = [NSString stringWithFormat:@"%@ %@ %@",[self.settingDic objectForKey:@"showText"],player_name,player_num];
-    self.SettingContentString.text = meg_str;
-    [self.settingDic setObject:meg_str forKey:@"showText"];
-    
-    if(self.gBlock)
-    {
+
+    [self.playerView reloadData];
+
+    if (self.gBlock) {
         self.gBlock(self.settingDic);
     }
-    
-    
-    
 }
+
+//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+//{    
+//    [self.All_Array removeAllObjects];
+//    for(int i=0;i<self.All_playerArray.count;i++)
+//    {
+//        self.All_ArrayDic = [NSMutableDictionary new];
+//        [self.All_ArrayDic setObject:[self.All_playerArray objectAtIndex:i] forKey:@"playeritem"];
+//        [self.All_ArrayDic setObject:@"0" forKey:@"hightlight"];
+//        [self.All_Array addObject:self.All_ArrayDic];
+//    }
+//    
+//    if(indexPath.item<self.All_playerArray.count)
+//    {
+//        NSDictionary *dic = [self.All_playerArray objectAtIndex:indexPath.item];
+//        [self.settingDic setObject:[dic objectForKey:@"CHName"] forKey:@"playername"];
+//        [self.settingDic setObject:[dic objectForKey:@"UniformNo"] forKey:@"playerNO"];
+//        
+//        NSMutableDictionary *info = [NSMutableDictionary new];
+//        [info setObject:[self.All_playerArray objectAtIndex:indexPath.item] forKey:@"playeritem"];
+//        [info setObject:@"1" forKey:@"hightlight"];
+//        [self.All_Array replaceObjectAtIndex:indexPath.item withObject:info];
+//        
+//        [self.playerView reloadData];
+//    }
+//    
+//    
+//    NSString *player_name = [self.settingDic objectForKey:@"playername"];
+//    NSString *player_num = [self.settingDic objectForKey:@"playerNO"];
+//    NSString *meg_str = [NSString stringWithFormat:@"%@ %@ %@",[self.settingDic objectForKey:@"showText"],player_name,player_num];
+//    self.SettingContentString.text = meg_str;
+//    [self.settingDic setObject:meg_str forKey:@"showText"];
+//    
+//    if(self.gBlock)
+//    {
+//        self.gBlock(self.settingDic);
+//    }
+//    
+//    
+//    
+//}
 // 设置cell大小 itemSize：可以给每一个cell指定不同的尺寸
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
 
@@ -1126,6 +1180,7 @@
     CGFloat height =ScaleW(23);
     return CGSizeMake(width, height);
 }
+//ẩn data từ api
 // 设置UIcollectionView整体的内边距（这样item不贴边显示）
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     // 上 左 下 右

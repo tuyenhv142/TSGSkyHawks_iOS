@@ -380,10 +380,22 @@
     for (int i = 0; i < dataArray.count; i++) {
         
         EGScheduleModel *model = [dataArray objectAtIndex:i];
+//        NSString *gameTimeStatr = model.GameDateTimeS;
+//        NSString *time = [gameTimeStatr substringWithRange:NSMakeRange(0, 16)];
+//        time = [time stringByReplacingOccurrencesOfString:@"T" withString:[self getWeek:model.GameDateTimeS]];
+//        time = [time stringByReplacingOccurrencesOfString:@"-" withString:@"/"];
         NSString *gameTimeStatr = model.GameDateTimeS;
-        NSString *time = [gameTimeStatr substringWithRange:NSMakeRange(0, 16)];
-        time = [time stringByReplacingOccurrencesOfString:@"T" withString:[self getWeek:model.GameDateTimeS]];
-        time = [time stringByReplacingOccurrencesOfString:@"-" withString:@"/"];
+
+        // Lấy tháng/ngày
+        NSString *time = [gameTimeStatr substringWithRange:NSMakeRange(5, 5)]; // "MM-dd"
+        time = [time stringByReplacingOccurrencesOfString:@"-" withString:@"/"]; // "MM/dd"
+
+        // Thêm thứ
+        time = [time stringByAppendingString:[self getWeek:model.GameDateTimeS]];
+
+        // Nếu muốn hiển thị giờ, thêm giờ phút
+        NSString *hourMinute = [gameTimeStatr substringWithRange:NSMakeRange(11,5)]; // "HH:mm"
+        time = [time stringByAppendingFormat:@" %@", hourMinute];
         if (i == 0) {
         
             self.dateLb.text = time;

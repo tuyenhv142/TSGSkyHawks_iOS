@@ -50,10 +50,10 @@
     UIButton *closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     closeBtn.layer.cornerRadius = 8;
     closeBtn.layer.masksToBounds = true;
-    closeBtn.layer.borderColor = rgba(0, 122, 96, 1).CGColor;
+    closeBtn.layer.borderColor = rgba(0, 121, 192, 1).CGColor;
     closeBtn.layer.borderWidth = 0.5;
     closeBtn.backgroundColor = UIColor.whiteColor;
-    [closeBtn setTitleColor:rgba(0, 122, 96, 1) forState:UIControlStateNormal];
+    [closeBtn setTitleColor:rgba(0, 121, 192, 1) forState:UIControlStateNormal];
     [closeBtn setTitle:NSLocalizedString(@"刪除帳號", nil) forState:UIControlStateNormal];
     [closeBtn addTarget:self action:@selector(cancelUserButton) forControlEvents:UIControlEventTouchUpInside];
     [footer addSubview:closeBtn];
@@ -131,12 +131,12 @@
         make.left.mas_equalTo(ScaleW(24));
     }];
     UIButton *changedBtn = [[UIButton alloc] init];
-    changedBtn.layer.borderColor = rgba(0, 122, 96, 1).CGColor;
+    changedBtn.layer.borderColor = rgba(0, 121, 192, 1).CGColor;
     changedBtn.layer.borderWidth = 1;
     changedBtn.layer.cornerRadius = 8;
     changedBtn.layer.masksToBounds = true;
     [changedBtn setTitle:@"修改密碼" forState:UIControlStateNormal];
-    [changedBtn setTitleColor:rgba(0, 122, 96, 1) forState:UIControlStateNormal];
+    [changedBtn setTitleColor:rgba(0, 121, 192, 1) forState:UIControlStateNormal];
     [changedBtn addTarget:self action:@selector(changedPassword) forControlEvents:UIControlEventTouchUpInside];
     [topView addSubview:changedBtn];
     [changedBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -161,7 +161,7 @@
     [sureBtn setTitle:@"儲存" forState:UIControlStateNormal];
     [sureBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
     [sureBtn setTitleColor:rgba(163, 163, 163, 1) forState:UIControlStateDisabled];
-    sureBtn.backgroundColor = rgba(0, 122, 96, 1);
+    sureBtn.backgroundColor = rgba(0, 121, 192, 1);
     [sureBtn addTarget:self action:@selector(bottomButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     sureBtn.titleEdgeInsets = UIEdgeInsetsMake(-ScaleW(25), 0, 0, 0); // 文字往上偏移 10 點
     [sureBtn sizeToFit];
@@ -173,7 +173,7 @@
         make.left.mas_equalTo(0);
     }];
     [sureBtn setBackgroundImage:[UIImage imageWithColor:rgba(222, 222, 222, 1)] forState:UIControlStateDisabled];
-    [sureBtn setBackgroundImage:[UIImage imageWithColor:rgba(0, 122, 96, 1)] forState:UIControlStateNormal];
+    [sureBtn setBackgroundImage:[UIImage imageWithColor:rgba(0, 121, 192, 1)] forState:UIControlStateNormal];
     self.sureBtn = sureBtn;
     self.sureBtn.enabled = false;
 }

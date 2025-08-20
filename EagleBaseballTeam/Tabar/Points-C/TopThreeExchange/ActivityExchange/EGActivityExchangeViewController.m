@@ -165,7 +165,7 @@
 -(void)createUI
 {
     UIView *topView = [UIView new];
-    topView.backgroundColor = rgba(16, 38, 73, 1);
+    topView.backgroundColor = rgba(0, 78, 162, 1);
     [self.view addSubview:topView];
     [topView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(ScaleW(47));

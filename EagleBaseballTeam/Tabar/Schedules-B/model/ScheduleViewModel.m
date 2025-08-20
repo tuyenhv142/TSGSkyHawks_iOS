@@ -233,20 +233,61 @@
         
         for (int j = 0; j < array.count; j++ )
         {
-            EGScheduleModel *model = array[j];
-            NSString *timeStr = model.GameDateTimeS;
-            NSDateFormatter *formatter1 = [[NSDateFormatter alloc] init];
-            [formatter1 setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
-            NSDate *dataDate = [formatter1 dateFromString:timeStr];
-            
-            NSInteger result = [self compareDate:dataDate withDate:[NSDate date]];
-            if (result < 1 ) {//&& [model.GameResult isEqualToString:@"0"]
-                self.model = model;
+//            EGScheduleModel *model = array[j];
+//            NSString *timeStr = model.GameDateTimeS;
+//            NSDateFormatter *formatter1 = [[NSDateFormatter alloc] init];
+//            [formatter1 setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+//            NSDate *dataDate = [formatter1 dateFromString:timeStr];
+//            
+//            NSInteger result = [self compareDate:dataDate withDate:[NSDate date]];
+//            if (result < 1 ) {//&& [model.GameResult isEqualToString:@"0"]
+//                self.model = model;
+//                if (self.blockRecords) {
+//                    self.blockRecords(self.model);
+//                }
+////                break;
+//            }
+            EGScheduleModel *displayMatch = nil;
+            NSMutableArray *upcomingMatches = [NSMutableArray array];
+
+            for (EGScheduleModel *model in array) {
+                NSString *timeStr = model.GameDateTimeS;
+                NSDateFormatter *formatter1 = [[NSDateFormatter alloc] init];
+                [formatter1 setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+                NSDate *dataDate = [formatter1 dateFromString:timeStr];
+                
+                NSInteger result = [self compareDate:dataDate withDate:[NSDate date]];
+                
+                if (result < 1) { // trận đã hoặc đang diễn ra
+                    displayMatch = model;
+                    break; // tìm được trận gần nhất đã/đang diễn ra thì dừng
+                } else {
+                    [upcomingMatches addObject:model]; // trận chưa diễn ra
+                }
+            }
+
+            // Nếu không có trận đã/đang diễn ra, lấy trận sắp diễn ra gần nhất
+            if (!displayMatch && upcomingMatches.count > 0) {
+                // Sắp xếp theo thời gian tăng dần
+                NSArray *sortedMatches = [upcomingMatches sortedArrayUsingComparator:^NSComparisonResult(EGScheduleModel *a, EGScheduleModel *b) {
+                    NSDateFormatter *formatter1 = [[NSDateFormatter alloc] init];
+                    [formatter1 setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+                    NSDate *dateA = [formatter1 dateFromString:a.GameDateTimeS];
+                    NSDate *dateB = [formatter1 dateFromString:b.GameDateTimeS];
+                    return [dateA compare:dateB];
+                }];
+                
+                displayMatch = sortedMatches.firstObject;
+            }
+
+            if (displayMatch) {
+                self.model = displayMatch;
                 if (self.blockRecords) {
                     self.blockRecords(self.model);
                 }
-//                break;
             }
+
+
         }
     }
     

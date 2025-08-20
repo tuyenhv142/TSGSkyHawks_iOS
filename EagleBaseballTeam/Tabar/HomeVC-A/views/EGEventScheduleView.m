@@ -339,6 +339,21 @@
             
         }
         
+    }else{
+        NSString *gameTimeStatr = model.GameDateTimeS;
+        NSString *time = [gameTimeStatr substringWithRange:NSMakeRange(0, 16)];
+        time = [time stringByReplacingOccurrencesOfString:@"T" withString:[self getWeek:model.GameDateTimeS]];
+        time = [time stringByReplacingOccurrencesOfString:@"-" withString:@"/"];
+        self.dateLb.text = time;
+        self.nameNumLb.text = [NSString stringWithFormat:@"%@ %ld", model.FieldAbbe, model.Seq];
+        self.rightImageView.image = [UIImage imageNamed:retureHeaderTeamIconImgName(model.HomeTeamName)];
+        self.leftImageView.image = [UIImage imageNamed:retureHeaderTeamIconImgName(model.VisitingTeamName)];
+        
+        self.vsLb.textColor = UIColor.whiteColor;
+        self.vsLb.text = @"VS";
+        self.vsLb.font = [UIFont systemFontOfSize:FontSize(16) weight:(UIFontWeightSemibold)];
+        self.leftScoreLb.text = @"-";
+        self.rightScoreLb.text = @"-";
     }
     
 //    if ([model.GameResult isEqualToString:@"0"]) {

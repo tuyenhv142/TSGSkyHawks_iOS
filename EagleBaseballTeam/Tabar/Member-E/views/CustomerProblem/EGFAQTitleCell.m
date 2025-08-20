@@ -50,7 +50,7 @@
 
     self.problemNo = [[UILabel alloc] init];
     self.problemNo.text = @"";
-    self.problemNo.textColor = rgba(0, 122, 96, 1);
+    self.problemNo.textColor = rgba(0, 121, 192, 1);
     self.problemNo.font = [UIFont systemFontOfSize:FontSize(16) weight:UIFontWeightSemibold];
     self.problemNo.textAlignment = NSTextAlignmentCenter;
     [self.baseView addSubview:self.problemNo];

@@ -40,7 +40,7 @@
 -(void)setUI{
 
     UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Device_Width, ScaleH(42))];
-    topView.backgroundColor = rgba(0, 71, 56, 1);
+    topView.backgroundColor = rgba(0, 78, 162, 1);
     [self.view addSubview:topView];
     UIButton *closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [closeBtn setImage:[UIImage imageNamed:@"x-mark"] forState:UIControlStateNormal];
@@ -68,7 +68,7 @@
     [sureBtn setTitle:@"確認變更" forState:UIControlStateNormal];
     [sureBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
     [sureBtn setTitleColor:rgba(163, 163, 163, 1) forState:UIControlStateDisabled];
-    sureBtn.backgroundColor = rgba(0, 122, 96, 1);
+    sureBtn.backgroundColor = rgba(0, 121, 192, 1);
     [sureBtn addTarget:self action:@selector(bottomButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     sureBtn.titleEdgeInsets = UIEdgeInsetsMake(-ScaleW(25), 0, 0, 0); // 文字往上偏移 10 點
     [sureBtn sizeToFit];
@@ -80,7 +80,7 @@
         make.left.mas_equalTo(0);
     }];
     [sureBtn setBackgroundImage:[UIImage imageWithColor:rgba(222, 222, 222, 1)] forState:UIControlStateDisabled];
-    [sureBtn setBackgroundImage:[UIImage imageWithColor:rgba(0, 122, 96, 1)] forState:UIControlStateNormal];
+    [sureBtn setBackgroundImage:[UIImage imageWithColor:rgba(0, 121, 192, 1)] forState:UIControlStateNormal];
     self.sureBtn = sureBtn;
     self.sureBtn.enabled = false;
 }
@@ -302,7 +302,7 @@
         make.right.mas_equalTo(-ScaleW(40));
     }];
     [rightBtn setBackgroundImage:[UIImage imageWithColor:rgba(243, 243, 243, 1)] forState:UIControlStateDisabled];
-    [rightBtn setBackgroundImage:[UIImage imageWithColor:rgba(0, 122, 96, 1)] forState:UIControlStateNormal];
+    [rightBtn setBackgroundImage:[UIImage imageWithColor:rgba(0, 72, 162, 1)] forState:UIControlStateNormal];
     self.rightBtn = rightBtn;
     UILabel *timeLb = [UILabel new];
     timeLb.textColor = rgba(220, 38, 38, 1);

@@ -53,7 +53,7 @@ static dispatch_once_t onceToken;
 - (void)saveStaticCredentials {
     
     [self saveToKeychain:@"newsoftapp" forKey:kUsernameKey];
-    [self saveToKeychain:@"Y21P 5Zsd EtAK dohZ 4WQo XA5L" forKey:kPasswordKey];
+    [self saveToKeychain:@"VU4m E5kG Azeu Rryo JmxT BXAj" forKey:kPasswordKey];
     //AIzaSyCce10Jdj3umtEeixlv9kKhhTFGfq8Dx9w mp
     //IzaSyAHtPSyko-zk2nz7iofQAzCz-KlA8enQ3c yumo
     [self saveToKeychain:@"AIzaSyCce10Jdj3umtEeixlv9kKhhTFGfq8Dx9w" forKey:kYouTubeKey];

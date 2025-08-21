@@ -49,7 +49,7 @@
         UIAlertAction *alertAction = [UIAlertAction actionWithTitle:confirmTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             SureBlock(action);
         }];
-        [alertAction setValue:[UIColor hexStringToColor:@"#007A60"] forKey:@"_titleTextColor"];
+        [alertAction setValue:[UIColor hexStringToColor:@"#004EA2"] forKey:@"_titleTextColor"];
         
         [alertController addAction:alertAction];
     }

@@ -89,6 +89,7 @@
         // Initialize WKWebView with configuration
         _wkWebView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:config];
 //        _wkWebView = [[WKWebView alloc] initWithFrame:CGRectZero];
+        _wkWebView.navigationDelegate = self;
         [self.view addSubview:_wkWebView];
         [_wkWebView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo([UIDevice de_navigationFullHeight]);
@@ -104,6 +105,12 @@
                         context:nil];
     }
     return _wkWebView;
+}
+- (void)webView:(WKWebView *)webView
+didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential *credential))completionHandler {
+    NSURLCredential *credential = [[NSURLCredential alloc] initWithTrust:challenge.protectionSpace.serverTrust];
+    completionHandler(NSURLSessionAuthChallengeUseCredential, credential);
 }
 
 - (void)setWebUrl:(NSString *)webUrl

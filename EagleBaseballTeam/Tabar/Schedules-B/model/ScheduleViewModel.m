@@ -21,7 +21,7 @@
     NSString *base64AuthString = [authData base64EncodedStringWithOptions:0];
     NSString *authHeader = [NSString stringWithFormat:@"Basic %@", base64AuthString];
     NSDictionary *dict_header = @{@"Authorization":authHeader};
-    ELog(@"%@", authString)
+    
     
     NSString *url = [EGServerAPI getSchedule_api];
 //    NSString *url = @"http://tsg-hawks-akaqhvfyb7euhdh7.a03.azurefd.net/wp-json/th_game/v1/GetSchedule";//CDN 测试 无网路 数据请求
@@ -58,14 +58,17 @@
 - (void)getScheduleCalendarDataTest:(NSString *)year Completion:(void (^)(NSError *error,NSArray *array))completionHandler
 {
     WS(weakSelf);
-    NSDictionary *headerDict = @{@"Accept": @"application/json",  // 添加 Accept 头
-                   @"Content-Type": @"application/json"  // 添加 Content-Type 头
-    };
-    
+    NSString *authString = [NSString stringWithFormat:@"%@:%@", [[EGCredentialManager sharedManager] getUsername], [[EGCredentialManager sharedManager] getPassword]];
+    NSData *authData = [authString dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *base64AuthString = [authData base64EncodedStringWithOptions:0];
+    NSString *authHeader = [NSString stringWithFormat:@"Basic %@", base64AuthString];
+//    NSString *authHeader = [NSString stringWithFormat:@"Basic bmV3c29mdGFwcDpWVTRtIEU1a0cgQXpldSBScnlvIEpteFQgQlhBag=="];
+    NSDictionary *dict_header = @{@"Authorization":authHeader};
+
     NSString *url = [EGServerAPI getSchedule_api_test];
 //    NSString *url = @"http://tsg-hawks-akaqhvfyb7euhdh7.a03.azurefd.net/wp-json/th_game/v1/GetSchedule";//CDN 测试 无网路 数据请求
 //    [MBProgressHUD showMessage:@""];
-    [[WAFNWHTTPSTool sharedManager] getWithURL:url parameters:@{@"year":year} headers:headerDict success:^(id  _Nonnull response) {
+    [[WAFNWHTTPSTool sharedManager] getWithURL:url parameters:@{@"year":year} headers:dict_header success:^(id  _Nonnull response) {
         
         [MBProgressHUD hideHUD];
         NSArray *responseDto = [response objectForKey:@"ResponseDto"];
@@ -150,13 +153,20 @@
     WS(weakSelf);
     self.year = [year integerValue];
     self.model = nil;
-    NSDictionary *headerDict = @{@"Accept": @"application/json",  // 添加 Accept 头
-                   @"Content-Type": @"application/json"  // 添加 Content-Type 头
-    };
+//    NSDictionary *headerDict = @{@"Accept": @"application/json",  // 添加 Accept 头
+//                   @"Content-Type": @"application/json"  // 添加 Content-Type 头
+//    };
+    NSString *authString = [NSString stringWithFormat:@"%@:%@", [[EGCredentialManager sharedManager] getUsername], [[EGCredentialManager sharedManager] getPassword]];
+    NSData *authData = [authString dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *base64AuthString = [authData base64EncodedStringWithOptions:0];
+    NSString *authHeader = [NSString stringWithFormat:@"Basic %@", base64AuthString];
+//    NSString *authHeader = [NSString stringWithFormat:@"Basic bmV3c29mdGFwcDpWVTRtIEU1a0cgQXpldSBScnlvIEpteFQgQlhBag=="];
+    NSDictionary *dict_header = @{@"Authorization":authHeader};
+    
     NSString *url = [EGServerAPI getSchedule_api_test];
 //    NSString *url = @"https://www.tsghawks.com/wp-json/th_game/v1/GetSchedule";//雄鹰 测试 无网路 数据请求 需要加 dict_header
 //    [MBProgressHUD showMessage:@""];
-    [[WAFNWHTTPSTool sharedManager] getWithURL:url parameters:@{@"year":year} headers:headerDict success:^(id  _Nonnull response) {
+    [[WAFNWHTTPSTool sharedManager] getWithURL:url parameters:@{@"year":year} headers:dict_header success:^(id  _Nonnull response) {
         
         [MBProgressHUD hideHUD];
         NSArray *responseDto = [response objectForKey:@"ResponseDto"];
@@ -184,6 +194,7 @@
         if ([error.localizedDescription containsString:@"offline"] || error.code == -1009) {
             [MBProgressHUD showDelayHidenMessage:@"請檢查您的網路連線，確保裝置已連接至網路後再重試。"];
         }
+        ELog(@"%@",error)
     }];
     
 }
@@ -233,20 +244,61 @@
         
         for (int j = 0; j < array.count; j++ )
         {
-            EGScheduleModel *model = array[j];
-            NSString *timeStr = model.GameDateTimeS;
-            NSDateFormatter *formatter1 = [[NSDateFormatter alloc] init];
-            [formatter1 setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
-            NSDate *dataDate = [formatter1 dateFromString:timeStr];
-            
-            NSInteger result = [self compareDate:dataDate withDate:[NSDate date]];
-            if (result < 1 ) {//&& [model.GameResult isEqualToString:@"0"]
-                self.model = model;
+//            EGScheduleModel *model = array[j];
+//            NSString *timeStr = model.GameDateTimeS;
+//            NSDateFormatter *formatter1 = [[NSDateFormatter alloc] init];
+//            [formatter1 setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+//            NSDate *dataDate = [formatter1 dateFromString:timeStr];
+//            
+//            NSInteger result = [self compareDate:dataDate withDate:[NSDate date]];
+//            if (result < 1 ) {//&& [model.GameResult isEqualToString:@"0"]
+//                self.model = model;
+//                if (self.blockRecords) {
+//                    self.blockRecords(self.model);
+//                }
+////                break;
+//            }
+            EGScheduleModel *displayMatch = nil;
+            NSMutableArray *upcomingMatches = [NSMutableArray array];
+
+            for (EGScheduleModel *model in array) {
+                NSString *timeStr = model.GameDateTimeS;
+                NSDateFormatter *formatter1 = [[NSDateFormatter alloc] init];
+                [formatter1 setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+                NSDate *dataDate = [formatter1 dateFromString:timeStr];
+                
+                NSInteger result = [self compareDate:dataDate withDate:[NSDate date]];
+                
+                if (result < 1) { // trận đã hoặc đang diễn ra
+                    displayMatch = model;
+                    break; // tìm được trận gần nhất đã/đang diễn ra thì dừng
+                } else {
+                    [upcomingMatches addObject:model]; // trận chưa diễn ra
+                }
+            }
+
+            // Nếu không có trận đã/đang diễn ra, lấy trận sắp diễn ra gần nhất
+            if (!displayMatch && upcomingMatches.count > 0) {
+                // Sắp xếp theo thời gian tăng dần
+                NSArray *sortedMatches = [upcomingMatches sortedArrayUsingComparator:^NSComparisonResult(EGScheduleModel *a, EGScheduleModel *b) {
+                    NSDateFormatter *formatter1 = [[NSDateFormatter alloc] init];
+                    [formatter1 setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+                    NSDate *dateA = [formatter1 dateFromString:a.GameDateTimeS];
+                    NSDate *dateB = [formatter1 dateFromString:b.GameDateTimeS];
+                    return [dateA compare:dateB];
+                }];
+                
+                displayMatch = sortedMatches.firstObject;
+            }
+
+            if (displayMatch) {
+                self.model = displayMatch;
                 if (self.blockRecords) {
                     self.blockRecords(self.model);
                 }
-//                break;
             }
+
+
         }
     }
     

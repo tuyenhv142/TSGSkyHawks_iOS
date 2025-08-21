@@ -113,7 +113,7 @@
     CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
     
     UIView *baseView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight/3)];
-    baseView.backgroundColor = [UIColor colorWithRed:0 green:71.0/255.0 blue:56.0/255 alpha:1.0];
+    baseView.backgroundColor = [UIColor colorWithRed:0 green:78.0/255.0 blue:162.0/255 alpha:1.0];
     baseView.layer.cornerRadius = 15;
     baseView.layer.masksToBounds = YES;
     self.baseView = baseView;
@@ -206,7 +206,7 @@
     _imageView.layer.cornerRadius = ScaleW(300)/2;
     _imageView.layer.masksToBounds = YES;
     self.imageView.image = [UIImage imageNamed:@"color-2"];//[UIImage imageNamed:@"colors"];
-    self.imageView.backgroundColor = [UIColor colorWithRed:0 green:71.0/255.0 blue:56.0/255 alpha:1.0];//UIColor.clearColor;//[UIColor colorWithRed:0 green:71.0/255.0 blue:56.0/255 alpha:1.0];//UIColor.blackColor;
+    self.imageView.backgroundColor = [UIColor colorWithRed:0 green:78.0/255.0 blue:162.0/255 alpha:1.0];//UIColor.clearColor;//[UIColor colorWithRed:0 green:71.0/255.0 blue:56.0/255 alpha:1.0];//UIColor.blackColor;
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     self.imageView.userInteractionEnabled = YES;
 //    self.imageView.frame = self.bounds;
@@ -253,7 +253,7 @@
     self.colorslider = normalSlider;
     
     self.colorbarview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, ScaleW(260), ScaleW(15))];
-    self.colorbarview.backgroundColor = [UIColor colorWithRed:0 green:71.0/255.0 blue:56.0/255 alpha:1.0];
+    self.colorbarview.backgroundColor = [UIColor colorWithRed:0 green:78.0/255.0 blue:162.0/255 alpha:1.0];
     self.colorbarview.layer.cornerRadius = 8;
     self.colorbarview.layer.borderColor = UIColor.grayColor.CGColor;
     self.colorbarview.layer.borderWidth = 1.0;

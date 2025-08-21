@@ -140,7 +140,7 @@
         [weakSelf getAllData];
         [weakSelf.baseScrollView.mj_header endRefreshing];
     }];
-    header.activityIndicator.color = rgba(0, 122, 96, 1);
+    header.activityIndicator.color = rgba(0, 121, 192, 1);
     self.baseScrollView.mj_header = header;
     
     self.viewModel.blockRecords = ^(EGScheduleModel * _Nonnull model) {
@@ -203,7 +203,7 @@
 {
     EGNavigationController *nav = [[EGNavigationController alloc] initWithRootViewController:[EGLogInViewController new]];
     nav.modalPresentationStyle = UIModalPresentationFullScreen;
-    nav.navigationBar.backgroundColor = rgba(0, 71, 56, 1);
+    nav.navigationBar.backgroundColor = rgba(0, 78, 162, 1);
     [self presentViewController:nav animated:true completion:^{
     }];
 }
@@ -226,7 +226,7 @@
         }else{
             
 //            NSString *year = [model.GameDateTimeS substringToIndex:4];
-//            NSString *shopUrl = [NSString stringWithFormat:@"https://www.cpbl.com.tw/box?year=%@&kindCode=%@&gameSno=%ld",year,model.KindCode,model.GameSno];
+//            NSString *shopUrl = [NSString stringWithFormat:@"https://www.cpbl.com.tw/box?year=%@&kindCode=%@&gameSno=%ld",model.GameSno];
 //            SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:shopUrl]];
 //            safariVC.delegate = self;
 //            [self presentViewController:safariVC animated:YES completion:nil];
@@ -330,6 +330,7 @@
     [self.viewModel getScheduleData:year Completion:^(NSError * _Nonnull error, NSArray * _Nonnull array) {
         if (!error) {
             [weakSelf.list setDatas:array];
+            
         }
     }];
 }

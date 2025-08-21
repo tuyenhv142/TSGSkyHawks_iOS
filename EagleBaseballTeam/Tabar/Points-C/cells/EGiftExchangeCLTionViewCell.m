@@ -81,7 +81,7 @@
         [_statueBtn setTitle:@"贈品兌換" forState: UIControlStateNormal];
         _statueBtn.titleLabel.font = [UIFont systemFontOfSize:FontSize(14) weight:(UIFontWeightMedium)];
         [_statueBtn setTitleColor:rgba(255, 255, 255, 1) forState:UIControlStateNormal];
-        _statueBtn.backgroundColor = rgba(0, 122, 96, 1);
+        _statueBtn.backgroundColor = rgba(0, 121, 192, 1);
         _statueBtn.layer.cornerRadius = ScaleW(8);
         _statueBtn.layer.masksToBounds = true;
         

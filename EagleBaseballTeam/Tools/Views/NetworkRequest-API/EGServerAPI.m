@@ -37,7 +37,7 @@
 
 
 #define SERVERXiongYing @"https://www.tsghawks.com"
-#define SERVERXiongYingTest @"http://20.189.240.127"
+#define SERVERXiongYingTest @"https://20.189.240.127"
 #define SERVER_URL_TICKET @"https://ticket-platform.tsgb2c.net/api/v1"
 
 

@@ -176,11 +176,11 @@
 //从点数奖杯进入      @"成就勳章",
                     @"球隊戰績",
                     @"球隊成員",
-                    @"球隊升降",
+//                    @"球隊升降",
                     @{@"title": @"鷹援資訊", @"isNew": @YES},
                     @"關於天鷹",
                     @{@"title": @"球場介紹", @"isNew": @YES},
-                    @"球迷回饋",
+//                    @"球迷回饋",
                     @{@"title": @"球迷互動", @"isNew": @YES},
                     /*@{@"title": @"鷹迷天地", @"isNew": @YES},*/
                     ]
@@ -792,24 +792,28 @@
                 break;
             case 1://球队成员
             {
-                EGPlayerSupportingViewController *vc = [EGPlayerSupportingViewController new];
-                [self.navigationController pushViewController:vc animated:YES];
-            }
-                break;
-            case 2://球队升降
-            {
-                EGPublicWebViewController *webVc = [[EGPublicWebViewController alloc] init];
-                webVc.navigationItem.title = @"球隊升降";
-                    webVc.webUrl = @"https://www.cpbl.com.tw/team/trans?ClubNo=AKP";
-                [self.navigationController pushViewController:webVc animated:true];
-                
-                
-//                EGPlayerliftandlowerViewController *vc = [EGPlayerliftandlowerViewController new];
+//                EGPlayerSupportingViewController *vc = [EGPlayerSupportingViewController new];
 //                [self.navigationController pushViewController:vc animated:YES];
-//                [self openLink:@"https://www.cpbl.com.tw/team/trans?ClubNo=AKP"];
+                EGPublicWebViewController *webVc = [[EGPublicWebViewController alloc] init];
+                webVc.navigationItem.title = @"球隊成員";
+                    webVc.webUrl = @"https://20.189.240.127/players";
+                [self.navigationController pushViewController:webVc animated:true];
             }
                 break;
-            case 3://应援资讯
+//            case 2://球队升降
+//            {
+////                EGPublicWebViewController *webVc = [[EGPublicWebViewController alloc] init];
+////                webVc.navigationItem.title = @"球隊升降";
+////                    webVc.webUrl = @"https://www.cpbl.com.tw/team/trans?ClubNo=AKP";
+////                [self.navigationController pushViewController:webVc animated:true];
+//                
+//                
+////                EGPlayerliftandlowerViewController *vc = [EGPlayerliftandlowerViewController new];
+////                [self.navigationController pushViewController:vc animated:YES];
+////                [self openLink:@"https://www.cpbl.com.tw/team/trans?ClubNo=AKP"];
+//            }
+//                break;
+            case 2://应援资讯
             {
                 if (![EGLoginUserManager isLogIn]) {
                     WS(weakSelf);
@@ -824,81 +828,85 @@
                     }];
                     return;
                 }
-                EGFanSupportingViewController *vc = [EGFanSupportingViewController new];
-                [self.navigationController pushViewController:vc animated:YES];
+//                EGFanSupportingViewController *vc = [EGFanSupportingViewController new];
+//                [self.navigationController pushViewController:vc animated:YES];
+                EGPublicWebViewController *webVc = [[EGPublicWebViewController alloc] init];
+                webVc.navigationItem.title = @"應援資訊";
+                    webVc.webUrl = @"";
+                [self.navigationController pushViewController:webVc animated:true];
             }
                 break;
-            case 4://关于雄鹰
+            case 3://关于雄鹰
             {
                 
                 EGPublicWebViewController *webVc = [[EGPublicWebViewController alloc] init];
                 webVc.navigationItem.title = @"關於天鷹";
-                    webVc.webUrl = @"https://www.tsghawks.com/about-hawks/";
+                    webVc.webUrl = @"https://20.189.240.127/about-hawks/";
                 [self.navigationController pushViewController:webVc animated:true];
 //                [self openLink:@"https://www.tsghawks.com/about-hawks/"];
             }
                 break;
-            case 5://球场介绍
+            case 4://球场介绍
             {
-//                EGPublicWebViewController *webVc = [[EGPublicWebViewController alloc] init];
-//                webVc.navigationItem.title = @"球場介紹";
-//                webVc.webUrl = @"https://www.tsghawks.com/fan/chengching-lake-baseball-field/";
-//                [self.navigationController pushViewController:webVc animated:true];
+                EGPublicWebViewController *webVc = [[EGPublicWebViewController alloc] init];
+                webVc.navigationItem.title = @"球場介紹";
+                webVc.webUrl = @"https://20.189.240.127/fan/chengching-lake-baseball-field/";
+                [self.navigationController pushViewController:webVc animated:true];
 ////                [self openLink:@"https://www.tsghawks.com/fan/chengching-lake-baseball-field/"];
                 
-                EGStadiumIntroductionViewController *vc = [EGStadiumIntroductionViewController new];
-                [self.navigationController pushViewController:vc animated:YES];
+//                EGStadiumIntroductionViewController *vc = [EGStadiumIntroductionViewController new];
+//                [self.navigationController pushViewController:vc animated:YES];
                 
                 
             }
                 break;
-            case 6://球迷回馈
-            {
-//                EGPublicWebViewController *webVc = [[EGPublicWebViewController alloc] init];
-//                webVc.navigationItem.title = @"球迷回饋";
-//                webVc.webUrl = @"https://www.tsghawks.com/fan/download/";
-//                [self.navigationController pushViewController:webVc animated:true];
-                [self openLink:@"https://www.surveycake.com/s/LnnMR"];
-                // 在需要使用 taskID 的地方
-                [self getTask:^(BOOL success) {
-                    if (success) {
-                        NSString *taskID = [EGTaskManager sharedManager].taskID;
-                        if (taskID) {
-                            //需要调用check in 加点
-                            [self pointGrant:@{@"UUID":taskID}
-                                  completion:^(BOOL success) {
-                                if (success) {
-                                    // 处理成功情况
-                                    dispatch_async(dispatch_get_main_queue(), ^{
-
-                                        [[NSNotificationCenter defaultCenter] postNotificationName:@"TaskStatusUpdateNotification"
-                                                                                            object:nil
-                                                                                          userInfo:@{
-                                            @"section": @"",
-                                            @"index": @"",
-                                            @"status": @"",
-                                            @"points": @""
-                                        }];
-                                    });
-                                } else {
-                                    // 处理失败情况
-                                    NSLog(@"添加点数失败");
-                                }
-                            }
-                            ];
-                        }
-                    }
-                }];
-            }
-                break;
-            case 7:
+//            case 6://球迷回馈
+//            {
+////                EGPublicWebViewController *webVc = [[EGPublicWebViewController alloc] init];
+////                webVc.navigationItem.title = @"球迷回饋";
+////                webVc.webUrl = @"https://www.tsghawks.com/fan/download/";
+////                [self.navigationController pushViewController:webVc animated:true];
+//                [self openLink:@"https://www.surveycake.com/s/LnnMR"];
+//                // 在需要使用 taskID 的地方
+//                [self getTask:^(BOOL success) {
+//                    if (success) {
+//                        NSString *taskID = [EGTaskManager sharedManager].taskID;
+//                        if (taskID) {
+//                            //需要调用check in 加点
+//                            [self pointGrant:@{@"UUID":taskID}
+//                                  completion:^(BOOL success) {
+//                                if (success) {
+//                                    // 处理成功情况
+//                                    dispatch_async(dispatch_get_main_queue(), ^{
+//
+//                                        [[NSNotificationCenter defaultCenter] postNotificationName:@"TaskStatusUpdateNotification"
+//                                                                                            object:nil
+//                                                                                          userInfo:@{
+//                                            @"section": @"",
+//                                            @"index": @"",
+//                                            @"status": @"",
+//                                            @"points": @""
+//                                        }];
+//                                    });
+//                                } else {
+//                                    // 处理失败情况
+//                                    NSLog(@"添加点数失败");
+//                                }
+//                            }
+//                            ];
+//                        }
+//                    }
+//                }];
+//            }
+//                break;
+            case 5:
             {
                 if (![EGLoginUserManager isLogIn]) {
                     WS(weakSelf);
                     EGLogInViewController *login = [EGLogInViewController new];
                     EGNavigationController *nav = [[EGNavigationController alloc] initWithRootViewController:login];
                     nav.modalPresentationStyle = UIModalPresentationFullScreen;
-                    nav.navigationBar.backgroundColor = rgba(0, 71, 56, 1);
+                    nav.navigationBar.backgroundColor = rgba(0, 78, 162, 1);
                     login.logInBlock = ^{
                         [weakSelf setupData];
                     };
@@ -910,7 +918,7 @@
                 [self.navigationController pushViewController:photoVC animated:true];
             }
                 break;
-            case 8:
+            case 6:
             {
                 if (![EGLoginUserManager isLogIn]) {
                     WS(weakSelf);
@@ -950,7 +958,7 @@
                 EGLogInViewController *login = [EGLogInViewController new];
                 EGNavigationController *nav = [[EGNavigationController alloc] initWithRootViewController:login];
                 nav.modalPresentationStyle = UIModalPresentationFullScreen;
-                nav.navigationBar.backgroundColor = rgba(0, 71, 56, 1);
+                nav.navigationBar.backgroundColor = rgba(0, 78, 162, 1);
                 login.logInBlock = ^{
                     [weakSelf setupData];
                 };
@@ -1272,7 +1280,7 @@
         EGLogInViewController *login = [EGLogInViewController new];
         EGNavigationController *nav = [[EGNavigationController alloc] initWithRootViewController:login];
         nav.modalPresentationStyle = UIModalPresentationFullScreen;
-        nav.navigationBar.backgroundColor = rgba(0, 71, 56, 1);
+        nav.navigationBar.backgroundColor = rgba(0, 78, 162, 1);
         login.logInBlock = ^{
             [weakSelf setupData];
         };
@@ -1312,7 +1320,7 @@
         EGLogInViewController *login = [EGLogInViewController new];
         EGNavigationController *nav = [[EGNavigationController alloc] initWithRootViewController:login];
         nav.modalPresentationStyle = UIModalPresentationFullScreen;
-        nav.navigationBar.backgroundColor = rgba(0, 71, 56, 1);
+        nav.navigationBar.backgroundColor = rgba(0, 78, 162, 1);
         login.logInBlock = ^{
             [weakSelf setupData];
         };
@@ -1320,8 +1328,8 @@
         }];
         return;
     }
-    EGMembershipLevelViewController *membershipVC = [[EGMembershipLevelViewController alloc] init];
-    [self.navigationController pushViewController:membershipVC animated:YES];
+//    EGMembershipLevelViewController *membershipVC = [[EGMembershipLevelViewController alloc] init];
+//    [self.navigationController pushViewController:membershipVC animated:YES];
 }
 
 /*

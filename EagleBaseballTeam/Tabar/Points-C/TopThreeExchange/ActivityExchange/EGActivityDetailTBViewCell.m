@@ -154,7 +154,7 @@
         
         self.titleDes = [UILabel new];
         self.titleDes.text = @"兌換地點";
-        self.titleDes.textColor = rgba(0, 122, 96, 1);
+        self.titleDes.textColor = rgba(0, 121, 192, 1);
         self.titleDes.font = [UIFont systemFontOfSize:FontSize(14) weight:UIFontWeightSemibold];
         [baseView addSubview:self.titleDes];
         [self.titleDes mas_makeConstraints:^(MASConstraintMaker *make) {

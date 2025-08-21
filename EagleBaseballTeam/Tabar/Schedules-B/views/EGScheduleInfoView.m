@@ -77,6 +77,7 @@
     }
     return _bottomView;
 }
+
 - (UILabel *)titleLb
 {
     if (!_titleLb) {
@@ -154,16 +155,17 @@
         _leftBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
         _leftBtn.tag = 11;
         _leftBtn.backgroundColor = UIColor.whiteColor;
-        _leftBtn.layer.cornerRadius = ScaleW(8);
+        _leftBtn.layer.cornerRadius = ScaleW(18);
         _leftBtn.layer.masksToBounds = true;
         _leftBtn.layer.borderWidth = 1;
-        _leftBtn.layer.borderColor = rgba(0, 78, 162, 1).CGColor;
+        _leftBtn.layer.borderColor = rgba(0, 121, 192, 1).CGColor;
         _leftBtn.titleLabel.font = [UIFont systemFontOfSize:FontSize(14) weight:UIFontWeightMedium];
         [_leftBtn setTitle:@"加入行事曆" forState:UIControlStateNormal];
-        [_leftBtn setTitleColor:rgba(0, 78, 162, 1) forState:UIControlStateNormal];
+        [_leftBtn setTitleColor:rgba(0, 121, 192, 1) forState:UIControlStateNormal];
         [_leftBtn setTitleColor:rgba(115, 115, 115, 1) forState:UIControlStateDisabled];
         [_leftBtn addTarget:self action:@selector(addCalendarOrGoShop:) forControlEvents:UIControlEventTouchUpInside];
         [self.bottomView addSubview:_leftBtn];
+        
     }
     return _leftBtn;
 }
@@ -173,8 +175,8 @@
     if (!_rightBtn) {
         _rightBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
         _rightBtn.tag = 12;
-        _rightBtn.backgroundColor = rgba(0, 78, 162, 1);
-        _rightBtn.layer.cornerRadius = ScaleW(8);
+        _rightBtn.backgroundColor = rgba(0, 121, 192, 1);
+        _rightBtn.layer.cornerRadius = ScaleW(18);
         _rightBtn.layer.masksToBounds = true;
         _rightBtn.titleLabel.font = [UIFont systemFontOfSize:FontSize(14) weight:UIFontWeightMedium];
         [_rightBtn setTitle:@"前往購票" forState:UIControlStateNormal];
@@ -275,17 +277,14 @@
         }];
         
 //        button
+        [self.rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(ScaleW(141));
+            make.height.mas_equalTo(ScaleH(30));
+        }];
         [self.leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.mas_equalTo(-ScaleH(16));
-            make.left.mas_equalTo(ScaleW(30));
             make.width.mas_equalTo(ScaleW(141));
-            make.height.mas_equalTo(ScaleH(35));
-        }];
-        [self.rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.mas_equalTo(-ScaleH(16));
-            make.right.mas_equalTo(-ScaleW(30));
-            make.width.mas_equalTo(ScaleW(141));
-            make.height.mas_equalTo(ScaleH(35));
+            make.height.mas_equalTo(ScaleH(30));
         }];
     }
     return self;
@@ -312,12 +311,18 @@
     
     if (model.PresentStatus == 9) {
         
-        CGFloat height = ScaleH(188);
+        CGFloat height = ScaleH(200);
         CGFloat selfY = Device_Height - (height + [UIDevice de_tabBarFullHeight]);
         self.frame = CGRectMake(0, selfY, Device_Width, height);
         
+        CGFloat bottomHeight;
+        if ([model.HomeTeamName isEqualToString:@"台鋼天鷹"]) {
+            bottomHeight = ScaleH(128);
+        } else {
+            bottomHeight = ScaleH(105);
+        }
         [self.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(ScaleH(144));
+            make.height.mas_equalTo(ScaleH(bottomHeight));
         }];
         [self.topView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.bottom.equalTo(self.bottomView.mas_top);
@@ -342,36 +347,49 @@
             make.centerX.mas_equalTo(0);
         }];
         
-        
+        self.leftBtn.hidden = false;
         self.leftBtn.enabled = true;
-        self.leftBtn.layer.borderColor = rgba(0, 122, 96, 1).CGColor;
+        self.leftBtn.layer.borderColor = rgba(0, 121, 192, 1).CGColor;
         self.leftBtn.backgroundColor = UIColor.whiteColor;
         [self.leftBtn setTitle:@"加入行事曆" forState:UIControlStateNormal];
         
         if ([model.HomeTeamName isEqualToString:@"台鋼天鷹"]) {//雄鹰主场才能买票
-            
-            [self.rightBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.right.mas_equalTo(-ScaleW(30));
-                make.width.mas_equalTo(ScaleW(141));
-            }];
-            
-            [self.leftBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.left.mas_equalTo(ScaleW(30));
-                make.width.mas_equalTo(ScaleW(141));
+            CGFloat spacing = ScaleH(12);
+            [self.rightBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.top.mas_equalTo(ScaleH(70));
+                make.left.mas_equalTo(ScaleW(120));
+                make.right.mas_equalTo(-ScaleW(120));
+                make.height.mas_equalTo(ScaleH(30));
             }];
             self.rightBtn.hidden = false;
             [self.rightBtn setTitle:@"前往購票" forState:UIControlStateNormal];
+            [_rightBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
+//            _rightBtn.layer.borderWidth = 1;
+//            _rightBtn.layer.borderColor = rgba(0, 121, 192, 1).CGColor;
+            self.rightBtn.backgroundColor = rgba(0, 121, 192, 1);
+
+            // rightBtn
+            [self.leftBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(self.rightBtn.mas_bottom).offset(spacing);
+                make.left.mas_equalTo(ScaleW(120));
+                make.right.mas_equalTo(-ScaleW(120));
+                make.height.mas_equalTo(ScaleH(30));
+
+            }];
+            
             
         }else{
-            
             [self.rightBtn mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.right.mas_equalTo(-ScaleW(30));
                 make.width.mas_equalTo(0);
             }];
             
-            [self.leftBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.left.mas_equalTo(ScaleW(30));
-                make.width.mas_equalTo(ScaleW(312));
+            [self.leftBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
+//                make.centerX.equalTo(self.bottomView);     // căn giữa ngang
+                make.top.mas_equalTo(ScaleH(80));
+                make.right.mas_equalTo(-ScaleW(120));
+                make.height.mas_equalTo(ScaleH(30));
+                make.left.mas_equalTo(ScaleW(120));
             }];
             self.rightBtn.hidden = true;
         }
@@ -394,7 +412,7 @@
         self.frame = CGRectMake(0, selfY, Device_Width, height);
         
         [self.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(ScaleH(175));
+            make.height.mas_equalTo(ScaleH(150));
         }];
         [self.topView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.bottom.equalTo(self.bottomView.mas_top);
@@ -425,24 +443,36 @@
             self.leftScoreLb.text = [NSString stringWithFormat:@"%ld",model.VisitingSetsWon];
             
             [self.rightBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.right.mas_equalTo(-ScaleW(30));
-                make.width.mas_equalTo(ScaleW(141));
+                make.right.mas_equalTo(-ScaleW(120));
+                make.width.mas_equalTo(ScaleW(100));
+                make.left.mas_equalTo(ScaleW(120));
+                
             }];
             [self.leftBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.left.mas_equalTo(ScaleW(30));
-                make.width.mas_equalTo(ScaleW(141));
+                make.left.mas_equalTo(-ScaleW(30));
+                make.width.mas_equalTo(0);
             }];
             self.rightBtn.hidden = false;
             [self.rightBtn setTitle:@"賽事回顧" forState:UIControlStateNormal];
+            [_rightBtn setTitleColor:rgba(0, 121, 192, 1) forState:UIControlStateNormal];
+            _rightBtn.layer.borderWidth = 1;
+            _rightBtn.layer.borderColor = rgba(0, 121, 192, 1).CGColor;
+            self.rightBtn.backgroundColor = UIColor.whiteColor;
+            [self.rightBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.top.mas_equalTo(ScaleH(95));
+                make.left.mas_equalTo(ScaleW(120));
+                make.right.mas_equalTo(-ScaleW(120));
+                make.height.mas_equalTo(ScaleH(30));
+            }];
             
 //            self.leftBtn.enabled = true;
 //            self.leftBtn.layer.borderColor = rgba(0, 122, 96, 1).CGColor;
 //            self.leftBtn.backgroundColor = UIColor.whiteColor;
 //            [self.leftBtn setTitle:@"鷹迷回顧" forState:UIControlStateNormal];
-            self.leftBtn.enabled = false;
-            self.leftBtn.layer.borderColor = UIColor.clearColor.CGColor;
-            self.leftBtn.backgroundColor = rgba(222, 222, 222, 1);
-            [self.leftBtn setTitle:@"加入行事曆" forState:UIControlStateNormal];
+            self.leftBtn.hidden = true;
+//            self.leftBtn.layer.borderColor = UIColor.clearColor.CGColor;
+//            self.leftBtn.backgroundColor = rgba(222, 222, 222, 1);
+//            [self.leftBtn setTitle:@"加入行事曆" forState:UIControlStateNormal];
             
         }else{
             
@@ -459,6 +489,7 @@
             }];
             self.rightBtn.hidden = true;
             
+            self.leftBtn.hidden = false;
             self.leftBtn.enabled = false;
             self.leftBtn.layer.borderColor = UIColor.clearColor.CGColor;
             self.leftBtn.backgroundColor = rgba(222, 222, 222, 1);

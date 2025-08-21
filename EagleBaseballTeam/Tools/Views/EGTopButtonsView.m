@@ -102,7 +102,7 @@
     
     // 滑块指示器
     self.bustatuslable = [[UIView alloc] init];
-    self.bustatuslable.backgroundColor = rgba(0, 122, 96, 1); //rgba(0, 122, 96, 1)
+    self.bustatuslable.backgroundColor = rgba(0, 121, 192, 1); //rgba(0, 122, 96, 1)
     [self addSubview:self.bustatuslable];
     [self.bustatuslable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self);

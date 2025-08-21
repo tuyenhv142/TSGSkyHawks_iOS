@@ -181,8 +181,6 @@
 //        self.teamCodeArr = @[@"AJL011",@"AAA011",@"ADD011",@"ACN011",@"AEO011"];
         self.teamCodeArr = @[@"臺中連莊",@"桃園雲豹",@"臺北伊斯特"];
     }
-    NSArray *teamCodes = teamCodeArr;
-    ELog(@"%@", teamCodes)
     
 //    [self.dataMArray removeAllObjects];
 //    for (NSString *teamCode in teamCodes) {

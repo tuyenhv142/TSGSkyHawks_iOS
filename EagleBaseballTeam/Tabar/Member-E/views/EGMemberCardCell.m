@@ -68,7 +68,7 @@
     [self.cardScrollView addGestureRecognizer:tapTop];
     
     self.pageControl = [[UIPageControl alloc] init];
-    self.pageControl.currentPageIndicatorTintColor =rgba(0, 122, 96, 1);
+    self.pageControl.currentPageIndicatorTintColor =rgba(0, 121, 192, 1);
     self.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     [self.contentView addSubview:self.pageControl];
     
@@ -105,7 +105,7 @@
     [self.baseView addSubview:self.nameLabel];
     
     self.typeLabel = [[EGPaddingLabel alloc] init];
-    self.typeLabel.textColor = rgba(0, 71, 56, 1);
+    self.typeLabel.textColor = rgba(0, 78, 162, 1);
     self.typeLabel.textAlignment= NSTextAlignmentCenter;
     self.typeLabel.font = [UIFont systemFontOfSize:FontSize(14) weight:UIFontWeightMedium];
     self.typeLabel.layer.cornerRadius = ScaleW(12);

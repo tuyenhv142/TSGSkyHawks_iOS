@@ -505,7 +505,7 @@
 //        }
 //    }
     
-    [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
     NSArray *arrayOfDictionaries = self.responseDto;
     NSString *targetTimeString = [formatter stringFromDate:date];   // 你要查找的时间字符串 2025-02-12T00:00:00
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"GameDate == %@", targetTimeString];// 假设字典中的时间键是"time"

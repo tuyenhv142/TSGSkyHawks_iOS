@@ -193,7 +193,7 @@
         [self getEventTast];
         
     }];
-    header.activityIndicator.color = rgba(10, 63, 145, 1);
+    header.activityIndicator.color = rgba(16, 38, 73, 1);
 
     // 设置下拉的触发距离
     self.tableView.mj_header = header;
@@ -805,7 +805,7 @@
         EGLogInViewController *login = [EGLogInViewController new];
         EGNavigationController *nav = [[EGNavigationController alloc] initWithRootViewController:login];
         nav.modalPresentationStyle = UIModalPresentationFullScreen;
-        nav.navigationBar.backgroundColor = rgba(0, 71, 56, 1);
+        nav.navigationBar.backgroundColor = rgba(0, 78, 162, 1);
         login.logInBlock = ^{
             [weakSelf setNavigationItem];
         };
@@ -832,8 +832,8 @@
            return;
        }
     
-    EGmedalViewController*vc = [EGmedalViewController new];
-    [self.navigationController pushViewController:vc animated:YES];
+//    EGmedalViewController*vc = [EGmedalViewController new];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)handleTaskwithInfo:(NSMutableDictionary *)taskInfo completion:(void(^)(BOOL isReceivable))completion

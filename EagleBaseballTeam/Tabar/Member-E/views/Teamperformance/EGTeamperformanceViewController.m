@@ -87,9 +87,9 @@
     
         
     [self setupTopView];
-    [self setupTeamperformanceUI];
-    [self setupPlayerTopUI];
-    [self setupSendPlayerTopUI];
+//    [self setupTeamperformanceUI];
+//    [self setupPlayerTopUI];
+//    [self setupSendPlayerTopUI];
     
     
     self.playerTopType = @"Avg";//初始化获取打擊率Avg数据
@@ -325,125 +325,126 @@ return self.MtableView;
 -(void)setupTopView
 {
     UIView *bsView = [[UIView alloc] initWithFrame:CGRectMake(0, [UIDevice de_navigationFullHeight], Device_Width, Device_Height)];
+//    bsView.backgroundColor = rgba(245, 245, 245, 1);
     bsView.backgroundColor = rgba(245, 245, 245, 1);
     [self.view addSubview:bsView];
     self.baseview = bsView;
-    
-    UIView *bView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Device_Width, ScaleW(55))];
-    bView.backgroundColor = UIColor.whiteColor;
-    [self.baseview addSubview:bView];
-    self.topView = bView;
-    
-    UIView *lineView = [UIView new];
-    lineView.backgroundColor = rgba(212, 212, 212, 1);
-    [self.topView addSubview:lineView];
-    
-    CGFloat bwidth = Device_Width /3;
-    LXYHyperlinksButton *bt = [[LXYHyperlinksButton alloc] initWithFrame:CGRectMake(0, 0, 100, 36)];
-    bt.tag = 20001;
-    [bt setTitle:@"球隊戰績" forState:UIControlStateNormal];
-    bt.titleLabel.font = [UIFont systemFontOfSize:FontSize(14) weight:UIFontWeightSemibold];
-    [bt setTitleColor:rgba(23, 23, 23, 1) forState:UIControlStateSelected];
-    [bt setTitleColor:rgba(115, 115, 115, 1) forState:UIControlStateNormal];
-    [bt setSelected:YES];
-    [bt addTarget:self action:@selector(buttonclick:) forControlEvents:(UIControlEventTouchUpInside)];
-    [self.topView addSubview:bt];
-    [bt setColor:/*rgba(0, 122, 96, 1)*/[UIColor clearColor]];
-    self.fansmusic_bt = bt;
-    
-   
-    [bt mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(ScaleW(0));
-            make.top.mas_equalTo(ScaleW(5));
-            make.width.mas_equalTo(bwidth);
-            make.height.mas_equalTo(ScaleW(50));
-        }];
-    
-    bt = [[LXYHyperlinksButton alloc] initWithFrame:CGRectMake(0, 0, 100, 36)];
-    bt.tag = 20002;
-    [bt setTitle:@"打者排行榜" forState:UIControlStateNormal];
-    [bt addTarget:self action:@selector(buttonclick:) forControlEvents:(UIControlEventTouchUpInside)];
-    [bt setTitleColor:rgba(23, 23, 23, 1) forState:UIControlStateSelected];
-    [bt setTitleColor:rgba(115, 115, 115, 1) forState:UIControlStateNormal];
-    [bt setSelected:NO];
-    bt.titleLabel.font = [UIFont systemFontOfSize:FontSize(14) weight:UIFontWeightSemibold];
-    [self.topView addSubview:bt];
-    [bt setColor:/*rgba(0, 122, 96, 1)*/[UIColor clearColor]];
-    self.wingstars_bt = bt;
-    [bt mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(self.fansmusic_bt.mas_right).offset(0);
-            make.top.mas_equalTo(ScaleW(5));
-            make.width.mas_equalTo(bwidth);
-            make.height.mas_equalTo(ScaleW(50));
-        }];
-    
-    bt = [[LXYHyperlinksButton alloc] initWithFrame:CGRectMake(0, 0, 100, 36)];
-    bt.tag = 20003;
-    [bt setTitle:@"投手排行榜" forState:UIControlStateNormal];
-    [bt addTarget:self action:@selector(buttonclick:) forControlEvents:(UIControlEventTouchUpInside)];
-    [bt setTitleColor:rgba(23, 23, 23, 1) forState:UIControlStateSelected];
-    [bt setTitleColor:rgba(115, 115, 115, 1) forState:UIControlStateNormal];
-    [bt setSelected:NO];
-    bt.titleLabel.font = [UIFont systemFontOfSize:FontSize(14) weight:UIFontWeightSemibold];
-    [self.topView addSubview:bt];
-    [bt setColor:/*rgba(0, 122, 96, 1)*/[UIColor clearColor]];
-    self.fansquan_bt = bt;
-    [bt mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(self.wingstars_bt.mas_right).offset(0);
-            make.top.mas_equalTo(ScaleW(5));
-            make.width.mas_equalTo(bwidth);
-            make.height.mas_equalTo(ScaleW(50));
-        }];
-    
-    [self.fansquan_bt setColor:[UIColor clearColor]];
-    [self.wingstars_bt setColor:[UIColor clearColor]];
-    
-
-    
-    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.fansquan_bt).offset(0);
-        make.left.right.equalTo(self.view);
-        make.height.mas_equalTo(1.5);
-    }];
-    
-    // 滑块指示器
-    self.bustatuslable = [[UIView alloc] init];
-        self.bustatuslable.backgroundColor = rgba(0, 78, 162, 1); //rgba(0, 122, 96, 1)
-    [self.topView addSubview:self.bustatuslable];
-        
-        [self.bustatuslable mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(self.topView);
-            make.width.mas_equalTo(bwidth);
-            make.height.mas_equalTo(ScaleW(4));
-            make.left.equalTo(self.topView);
-        }];
-    
-    [self updateSelectedButton:0];
-    
-    
-    // 滚动视图
-        self.mainscrollView = [[UIScrollView alloc] init];
-    self.mainscrollView.backgroundColor = [UIColor colorWithRed:0.962 green:0.962 blue:0.962 alpha:1.0];
-
-        self.mainscrollView.delegate = self;
-        self.mainscrollView.pagingEnabled = YES;
-      
-        self.mainscrollView.scrollEnabled = YES;
-        self.mainscrollView.showsHorizontalScrollIndicator = YES;
-        [self.baseview addSubview:self.mainscrollView];
-        
-
-        [self.mainscrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.topView.mas_bottom);
-            make.left.right.bottom.equalTo(self.baseview);
-        }];
-        
-    
-  
-       self.mainscrollView.contentSize = CGSizeMake(UIScreen.mainScreen.bounds.size.width * 3, 0);
-    self.halfInfo =  @"";
-    
-    self.mainscrollView.bounces = YES;
+    //commant start
+//    UIView *bView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Device_Width, ScaleW(55))];
+//    bView.backgroundColor = UIColor.whiteColor;
+//    [self.baseview addSubview:bView];
+//    self.topView = bView;
+//    
+//    UIView *lineView = [UIView new];
+//    lineView.backgroundColor = rgba(212, 212, 212, 1);
+//    [self.topView addSubview:lineView];
+//    CGFloat bwidth = Device_Width /3;
+//    LXYHyperlinksButton *bt = [[LXYHyperlinksButton alloc] initWithFrame:CGRectMake(0, 0, 100, 36)];
+//    bt.tag = 20001;
+//    [bt setTitle:@"球隊戰績" forState:UIControlStateNormal];
+//    bt.titleLabel.font = [UIFont systemFontOfSize:FontSize(14) weight:UIFontWeightSemibold];
+//    [bt setTitleColor:rgba(23, 23, 23, 1) forState:UIControlStateSelected];
+//    [bt setTitleColor:rgba(115, 115, 115, 1) forState:UIControlStateNormal];
+//    [bt setSelected:YES];
+//    [bt addTarget:self action:@selector(buttonclick:) forControlEvents:(UIControlEventTouchUpInside)];
+//    [self.topView addSubview:bt];
+//    [bt setColor:/*rgba(0, 122, 96, 1)*/[UIColor clearColor]];
+//    self.fansmusic_bt = bt;
+//    
+//   
+//    [bt mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.mas_equalTo(ScaleW(0));
+//            make.top.mas_equalTo(ScaleW(5));
+//            make.width.mas_equalTo(bwidth);
+//            make.height.mas_equalTo(ScaleW(50));
+//        }];
+//    
+//    bt = [[LXYHyperlinksButton alloc] initWithFrame:CGRectMake(0, 0, 100, 36)];
+//    bt.tag = 20002;
+//    [bt setTitle:@"打者排行榜" forState:UIControlStateNormal];
+//    [bt addTarget:self action:@selector(buttonclick:) forControlEvents:(UIControlEventTouchUpInside)];
+//    [bt setTitleColor:rgba(23, 23, 23, 1) forState:UIControlStateSelected];
+//    [bt setTitleColor:rgba(115, 115, 115, 1) forState:UIControlStateNormal];
+//    [bt setSelected:NO];
+//    bt.titleLabel.font = [UIFont systemFontOfSize:FontSize(14) weight:UIFontWeightSemibold];
+//    [self.topView addSubview:bt];
+//    [bt setColor:/*rgba(0, 122, 96, 1)*/[UIColor clearColor]];
+//    self.wingstars_bt = bt;
+//    [bt mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.mas_equalTo(self.fansmusic_bt.mas_right).offset(0);
+//            make.top.mas_equalTo(ScaleW(5));
+//            make.width.mas_equalTo(bwidth);
+//            make.height.mas_equalTo(ScaleW(50));
+//        }];
+//    
+//    bt = [[LXYHyperlinksButton alloc] initWithFrame:CGRectMake(0, 0, 100, 36)];
+//    bt.tag = 20003;
+//    [bt setTitle:@"投手排行榜" forState:UIControlStateNormal];
+//    [bt addTarget:self action:@selector(buttonclick:) forControlEvents:(UIControlEventTouchUpInside)];
+//    [bt setTitleColor:rgba(23, 23, 23, 1) forState:UIControlStateSelected];
+//    [bt setTitleColor:rgba(115, 115, 115, 1) forState:UIControlStateNormal];
+//    [bt setSelected:NO];
+//    bt.titleLabel.font = [UIFont systemFontOfSize:FontSize(14) weight:UIFontWeightSemibold];
+//    [self.topView addSubview:bt];
+//    [bt setColor:/*rgba(0, 122, 96, 1)*/[UIColor clearColor]];
+//    self.fansquan_bt = bt;
+//    [bt mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.mas_equalTo(self.wingstars_bt.mas_right).offset(0);
+//            make.top.mas_equalTo(ScaleW(5));
+//            make.width.mas_equalTo(bwidth);
+//            make.height.mas_equalTo(ScaleW(50));
+//        }];
+//    
+//    [self.fansquan_bt setColor:[UIColor clearColor]];
+//    [self.wingstars_bt setColor:[UIColor clearColor]];
+//    
+//
+//    
+//    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.bottom.equalTo(self.fansquan_bt).offset(0);
+//        make.left.right.equalTo(self.view);
+//        make.height.mas_equalTo(1.5);
+//    }];
+//    
+//    // 滑块指示器
+//    self.bustatuslable = [[UIView alloc] init];
+//        self.bustatuslable.backgroundColor = rgba(0, 78, 162, 1); //rgba(0, 122, 96, 1)
+//    [self.topView addSubview:self.bustatuslable];
+//        
+//        [self.bustatuslable mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.bottom.equalTo(self.topView);
+//            make.width.mas_equalTo(bwidth);
+//            make.height.mas_equalTo(ScaleW(4));
+//            make.left.equalTo(self.topView);
+//        }];
+//    
+//    [self updateSelectedButton:0];
+//    
+//    
+//    // 滚动视图
+//        self.mainscrollView = [[UIScrollView alloc] init];
+//    self.mainscrollView.backgroundColor = [UIColor colorWithRed:0.962 green:0.962 blue:0.962 alpha:1.0];
+//
+//        self.mainscrollView.delegate = self;
+//        self.mainscrollView.pagingEnabled = YES;
+//      
+//        self.mainscrollView.scrollEnabled = YES;
+//        self.mainscrollView.showsHorizontalScrollIndicator = YES;
+//        [self.baseview addSubview:self.mainscrollView];
+//        
+//
+//        [self.mainscrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.top.equalTo(self.topView.mas_bottom);
+//            make.left.right.bottom.equalTo(self.baseview);
+//        }];
+//        
+//    
+//  
+//       self.mainscrollView.contentSize = CGSizeMake(UIScreen.mainScreen.bounds.size.width * 3, 0);
+//    self.halfInfo =  @"";
+//    
+//    self.mainscrollView.bounces = YES;
+    //commant end
 //    // 让 ScrollView 的滑动手势在返回手势失败后触发
 //    UIGestureRecognizer *popGesture = self.navigationController.interactivePopGestureRecognizer;
 //    [self.mainscrollView.panGestureRecognizer requireGestureRecognizerToFail:popGesture];

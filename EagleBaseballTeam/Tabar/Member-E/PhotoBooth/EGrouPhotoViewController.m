@@ -115,8 +115,10 @@
     self.view.backgroundColor = UIColor.blackColor;
     
     self.itemsIndex = 0;
-    self.iconImages = @[@"ballMemberIcon0",@"ballMemberIcon1",@"ballMemberIcon2"];
-    self.bigImages = @[@"ballMember0",@"ballMember1",@"ballMember2"];
+    self.iconImages = @[@"ballMemberIcon0"];
+//    self.iconImages = @[@"ballMemberIcon0",@"ballMemberIcon1",@"ballMemberIcon2"];
+//    self.bigImages = @[@"ballMember0",@"ballMember1",@"ballMember2"];
+    self.bigImages = @[@"ballMember0"];
     
     [self setupPreviewContainerView];
     [self setupUI];
@@ -313,7 +315,7 @@
     self.captureButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.captureButton.layer.masksToBounds = true;
     self.captureButton.layer.cornerRadius = ScaleW(35);
-    self.captureButton.layer.borderColor = rgba(0, 122, 96, 1).CGColor;
+    self.captureButton.layer.borderColor = rgba(0, 121, 192, 1).CGColor;
     self.captureButton.layer.borderWidth = 5;
     [self.lightingButton setImage:[UIImage imageWithColor:rgba(243, 243, 243, 2)] forState:UIControlStateNormal];
     self.captureButton.backgroundColor = UIColor.whiteColor;
@@ -332,7 +334,7 @@
     self.lightingButton.layer.cornerRadius = ScaleW(21);
     [self.lightingButton setImage:[UIImage imageNamed:@"bolt-slash"] forState:UIControlStateNormal];
     [self.lightingButton setImage:[UIImage imageNamed:@"bolt"] forState:UIControlStateSelected];
-    self.lightingButton.backgroundColor = rgba(0, 122, 96, 1);
+    self.lightingButton.backgroundColor = rgba(0, 121, 192, 1);
     [self.lightingButton addTarget:self action:@selector(switchLighting:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.lightingButton];
     [self.lightingButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -347,7 +349,7 @@
     self.switchCameraButton.layer.masksToBounds = true;
     self.switchCameraButton.layer.cornerRadius = ScaleW(21);
     [self.switchCameraButton setImage:[UIImage imageNamed:@"arrow-path"] forState:UIControlStateNormal];
-    self.switchCameraButton.backgroundColor = rgba(0, 122, 96, 1);
+    self.switchCameraButton.backgroundColor = rgba(0, 121, 192, 1);
     [self.switchCameraButton addTarget:self action:@selector(switchCamera) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.switchCameraButton];
     [self.switchCameraButton mas_makeConstraints:^(MASConstraintMaker *make) {

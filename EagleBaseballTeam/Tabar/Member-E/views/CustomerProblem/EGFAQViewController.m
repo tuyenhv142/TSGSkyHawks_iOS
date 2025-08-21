@@ -63,7 +63,7 @@
     gradientLayer.startPoint = CGPointMake(0.5, 0.5);
     gradientLayer.endPoint = CGPointMake(0.5, 1);
     gradientLayer.frame = self.helpView.bounds;
-    gradientLayer.colors = @[(id)rgba(0, 71, 56, 1).CGColor,(id)rgba(0, 122, 96, 1).CGColor];
+    gradientLayer.colors = @[(id)rgba(0, 78, 162, 1).CGColor,(id)rgba(0, 121, 192, 1).CGColor];
     [self.helpView.layer insertSublayer:gradientLayer atIndex:0];
     [self.view addSubview:self.helpView];
     
@@ -146,7 +146,7 @@
     }];
     
     self.indicatorLabel = [[UIView alloc] init];
-    self.indicatorLabel.backgroundColor = [UIColor colorWithRed:0/255.0 green:122/255.0 blue:96/255.0 alpha:1.0];
+    self.indicatorLabel.backgroundColor = [UIColor colorWithRed:0/255.0 green:121/255.0 blue:192/255.0 alpha:1.0];
     [self.view addSubview:self.indicatorLabel];
     
     [self.indicatorLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -502,7 +502,7 @@
     if(![sectionTitle isEqualToString:@""])
     {
         titleLabel.text = sectionTitle;//self.sections[section][@"topTitle"];
-        titleLabel.textColor = rgba(0, 122, 96, 1);
+        titleLabel.textColor = rgba(0, 121, 192, 1);
         titleLabel.font = [UIFont systemFontOfSize:FontSize(16) weight:UIFontWeightSemibold];
         [headerView addSubview:titleLabel];
         

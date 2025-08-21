@@ -192,8 +192,15 @@
 -(void)getDataForTsghawks
 {
     WS(weakSelf);
-    NSString *url = @"http://20.189.240.127/wp-json/wp/v2/posts?per_page=4&orderby=date&order=desc";
+    NSString *username = @"newsoftapp";
+    NSString *password = @"VU4m E5kG Azeu Rryo JmxT BXAj";
+    NSString *url = @"https://20.189.240.127/wp-json/wp/v2/posts?per_page=4&orderby=date&order=desc";
+    NSString *loginString = [NSString stringWithFormat:@"%@:%@", username, password];
+    NSData *loginData = [loginString dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *base64LoginString = [loginData base64EncodedStringWithOptions:0];
+    NSString *authorizationHeaderValue = [NSString stringWithFormat:@"Basic %@", base64LoginString];
      
+//    NSLog(@"Redirecting to: %@", authorizationHeaderValue);
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     // Cho phép chứng chỉ không hợp lệ
     AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
@@ -202,6 +209,7 @@
     manager.securityPolicy = securityPolicy;
     //
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    [manager.requestSerializer setValue:authorizationHeaderValue forHTTPHeaderField:@"Authorization"];
     [manager GET:url parameters:nil headers:@{} progress:^(NSProgress * _Nonnull downloadProgress) {
             
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

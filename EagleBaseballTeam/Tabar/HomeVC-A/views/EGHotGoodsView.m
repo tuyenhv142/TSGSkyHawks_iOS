@@ -185,8 +185,8 @@
 {
     WS(weakSelf);
     NSString *username = @"newsoftapp";
-    NSString *password = @"Y21P 5Zsd EtAK dohZ 4WQo XA5L";
-    NSString *url = @"https://www.tsghawks.com/wp-json/wc/v3/products?per_page=4&order=desc&status=publish";
+    NSString *password = @"VU4m E5kG Azeu Rryo JmxT BXAj";
+    NSString *url = @"https://20.189.240.127/wp-json/wc/v3/products?per_page=4&order=desc";
     NSString *loginString = [NSString stringWithFormat:@"%@:%@", username, password];
     NSData *loginData = [loginString dataUsingEncoding:NSUTF8StringEncoding];
     NSString *base64LoginString = [loginData base64EncodedStringWithOptions:0];
@@ -195,6 +195,11 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
     [manager.requestSerializer setValue:authorizationHeaderValue forHTTPHeaderField:@"Authorization"];
+
+    AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+        policy.allowInvalidCertificates = YES; // cho phép chứng chỉ tự ký / không hợp lệ
+        policy.validatesDomainName = NO;       // bỏ qua xác thực domain (vì bạn dùng IP)
+        manager.securityPolicy = policy;
     [manager GET:url parameters:nil headers:@{} progress:^(NSProgress * _Nonnull downloadProgress) {
             
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

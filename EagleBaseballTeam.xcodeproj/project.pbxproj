@@ -40,7 +40,8 @@
 		1DF710F52D6DCCC9004B2AA9 /* EGPointsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF710F32D6DCCC9004B2AA9 /* EGPointsModel.m */; };
 		1DF710F92D6EF72A004B2AA9 /* EGCircleRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF710F72D6EF729004B2AA9 /* EGCircleRefreshHeader.m */; };
 		1DF9A4F12D793852002112AE /* EGServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9A4F02D793852002112AE /* EGServiceViewController.m */; };
-		8AE2CCF42E48ECE000A088F1 /* Assets 2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AE2CCF32E48ECE000A088F1 /* Assets 2.xcassets */; };
+		A2BC4F222E5574EB00BB787F /* ballMember0.png in Resources */ = {isa = PBXBuildFile; fileRef = A2BC4F212E5574EB00BB787F /* ballMember0.png */; };
+		A2BC4F242E55763400BB787F /* ballMemberIcon0.png in Resources */ = {isa = PBXBuildFile; fileRef = A2BC4F232E55763400BB787F /* ballMemberIcon0.png */; };
 		A780905C31C957C0F6A4D8B0 /* Pods_EagleBaseballTeam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08ADB02A36E77AB18A286329 /* Pods_EagleBaseballTeam.framework */; };
 		B7641EB62DF97DB500796C50 /* EGActivityMegTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7641EB52DF97DB500796C50 /* EGActivityMegTableViewCell.m */; };
 		B76B3E7A2E1522820045ACC9 /* ELAlbumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B76B3E792E1522820045ACC9 /* ELAlbumManager.m */; };
@@ -200,11 +201,9 @@
 		D89DB1662D7EC54000A95BA3 /* metel_mofan.json in Resources */ = {isa = PBXBuildFile; fileRef = D89DB1642D7EC54000A95BA3 /* metel_mofan.json */; };
 		D89DB1672D7EC54000A95BA3 /* metel_xunzhang.json in Resources */ = {isa = PBXBuildFile; fileRef = D89DB1652D7EC54000A95BA3 /* metel_xunzhang.json */; };
 		D8B2AE2A2D9E525D0030F3AF /* ballMember1.png in Resources */ = {isa = PBXBuildFile; fileRef = D8B2AE282D9E525D0030F3AF /* ballMember1.png */; };
-		D8B2AE2B2D9E525D0030F3AF /* ballMember0.png in Resources */ = {isa = PBXBuildFile; fileRef = D8B2AE272D9E525D0030F3AF /* ballMember0.png */; };
 		D8B2AE2C2D9E525D0030F3AF /* ballMember2.png in Resources */ = {isa = PBXBuildFile; fileRef = D8B2AE292D9E525D0030F3AF /* ballMember2.png */; };
 		D8B2AE302D9E53480030F3AF /* ballMemberIcon1.png in Resources */ = {isa = PBXBuildFile; fileRef = D8B2AE2E2D9E53480030F3AF /* ballMemberIcon1.png */; };
 		D8B2AE312D9E53480030F3AF /* ballMemberIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = D8B2AE2F2D9E53480030F3AF /* ballMemberIcon2.png */; };
-		D8B2AE322D9E53480030F3AF /* ballMemberIcon0.png in Resources */ = {isa = PBXBuildFile; fileRef = D8B2AE2D2D9E53480030F3AF /* ballMemberIcon0.png */; };
 		D8B6FF422D5B2E5300B3A971 /* EGiftExchangeCLTionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B6FF3F2D5B2E5300B3A971 /* EGiftExchangeCLTionViewCell.m */; };
 		D8B6FF432D5B2E5300B3A971 /* EGPointsListTBVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B6FF412D5B2E5300B3A971 /* EGPointsListTBVCell.m */; };
 		D8B6FF462D5B2E6C00B3A971 /* EGTBVSectionHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B6FF452D5B2E6C00B3A971 /* EGTBVSectionHeaderFooterView.m */; };
@@ -319,7 +318,8 @@
 		1DF9A4F02D793852002112AE /* EGServiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGServiceViewController.m; sourceTree = "<group>"; };
 		35A6E7BFDD392A44C1972037 /* Pods-EagleBaseballTeam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EagleBaseballTeam.debug.xcconfig"; path = "Target Support Files/Pods-EagleBaseballTeam/Pods-EagleBaseballTeam.debug.xcconfig"; sourceTree = "<group>"; };
 		897F2CA7194C10B54B9309BD /* Pods-EagleBaseballTeam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EagleBaseballTeam.release.xcconfig"; path = "Target Support Files/Pods-EagleBaseballTeam/Pods-EagleBaseballTeam.release.xcconfig"; sourceTree = "<group>"; };
-		8AE2CCF32E48ECE000A088F1 /* Assets 2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets 2.xcassets"; sourceTree = "<group>"; };
+		A2BC4F212E5574EB00BB787F /* ballMember0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ballMember0.png; sourceTree = "<group>"; };
+		A2BC4F232E55763400BB787F /* ballMemberIcon0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ballMemberIcon0.png; sourceTree = "<group>"; };
 		B7641EB42DF97DB500796C50 /* EGActivityMegTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGActivityMegTableViewCell.h; sourceTree = "<group>"; };
 		B7641EB52DF97DB500796C50 /* EGActivityMegTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGActivityMegTableViewCell.m; sourceTree = "<group>"; };
 		B76B3E782E1522820045ACC9 /* ELAlbumManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELAlbumManager.h; sourceTree = "<group>"; };
@@ -611,10 +611,8 @@
 		D89DB1652D7EC54000A95BA3 /* metel_xunzhang.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = metel_xunzhang.json; sourceTree = "<group>"; };
 		D89DFEBB2D92549D004468D4 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		D8B2AE212D9CD2070030F3AF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		D8B2AE272D9E525D0030F3AF /* ballMember0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ballMember0.png; sourceTree = "<group>"; };
 		D8B2AE282D9E525D0030F3AF /* ballMember1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ballMember1.png; sourceTree = "<group>"; };
 		D8B2AE292D9E525D0030F3AF /* ballMember2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ballMember2.png; sourceTree = "<group>"; };
-		D8B2AE2D2D9E53480030F3AF /* ballMemberIcon0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ballMemberIcon0.png; sourceTree = "<group>"; };
 		D8B2AE2E2D9E53480030F3AF /* ballMemberIcon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ballMemberIcon1.png; sourceTree = "<group>"; };
 		D8B2AE2F2D9E53480030F3AF /* ballMemberIcon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ballMemberIcon2.png; sourceTree = "<group>"; };
 		D8B6FF3E2D5B2E5300B3A971 /* EGiftExchangeCLTionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGiftExchangeCLTionViewCell.h; sourceTree = "<group>"; };
@@ -1243,7 +1241,6 @@
 				D87DBCA52D41F41400F5A2B5 /* AppDelegate.h */,
 				D87DBCA62D41F41400F5A2B5 /* AppDelegate.m */,
 				D87DBCA72D41F41400F5A2B5 /* Assets.xcassets */,
-				8AE2CCF32E48ECE000A088F1 /* Assets 2.xcassets */,
 				D87DBCA82D41F41400F5A2B5 /* EGPrefixHeader.pch */,
 				D87DBCA92D41F41400F5A2B5 /* Info.plist */,
 				D87DBCAB2D41F41400F5A2B5 /* LaunchScreen.storyboard */,
@@ -1557,12 +1554,12 @@
 		D8B2AE262D9E51E80030F3AF /* image */ = {
 			isa = PBXGroup;
 			children = (
-				D8B2AE2D2D9E53480030F3AF /* ballMemberIcon0.png */,
 				D8B2AE2E2D9E53480030F3AF /* ballMemberIcon1.png */,
 				D8B2AE2F2D9E53480030F3AF /* ballMemberIcon2.png */,
-				D8B2AE272D9E525D0030F3AF /* ballMember0.png */,
 				D8B2AE282D9E525D0030F3AF /* ballMember1.png */,
 				D8B2AE292D9E525D0030F3AF /* ballMember2.png */,
+				A2BC4F212E5574EB00BB787F /* ballMember0.png */,
+				A2BC4F232E55763400BB787F /* ballMemberIcon0.png */,
 			);
 			path = image;
 			sourceTree = "<group>";
@@ -1778,13 +1775,10 @@
 				D88DB1032E0952F800611219 /* seat.plist in Resources */,
 				D8E871E22D71688F004E7A21 /* registerpolicy.json in Resources */,
 				D8B2AE2A2D9E525D0030F3AF /* ballMember1.png in Resources */,
-				D8B2AE2B2D9E525D0030F3AF /* ballMember0.png in Resources */,
-				8AE2CCF42E48ECE000A088F1 /* Assets 2.xcassets in Resources */,
 				D8B2AE302D9E53480030F3AF /* ballMemberIcon1.png in Resources */,
 				D88DB1412E0B899800611219 /* catering.json in Resources */,
 				D8B2AE312D9E53480030F3AF /* ballMemberIcon2.png in Resources */,
 				D8889FCE2DA4D1D6000325AF /* common_questions.json in Resources */,
-				D8B2AE322D9E53480030F3AF /* ballMemberIcon0.png in Resources */,
 				D8B2AE2C2D9E525D0030F3AF /* ballMember2.png in Resources */,
 				D8D2709F2D649CC5006D7FED /* goodsfav.plist in Resources */,
 				D8D05A142D5DA07700041233 /* TermsofService.json in Resources */,
@@ -1805,6 +1799,7 @@
 				D89B002D2DD1E38100FDA0EA /* index.html in Resources */,
 				D882DAB72D54982E0088E44E /* LICENSE in Resources */,
 				D87DBCC82D41F41400F5A2B5 /* Main.storyboard in Resources */,
+				A2BC4F242E55763400BB787F /* ballMemberIcon0.png in Resources */,
 				D88DB0F22E04FFBC00611219 /* girlclass.json in Resources */,
 				D89DB1622D7EBC1A00A95BA3 /* metel_lichengbei.json in Resources */,
 				D8D27C772D67108800443D3F /* stores.json in Resources */,
@@ -1813,6 +1808,7 @@
 				D883B7C52D818E10005FC23A /* LaunchPage.png in Resources */,
 				D88DB0FA2E054C9B00611219 /* park.plist in Resources */,
 				D8D6E2682D93F2A30022022E /* GoogleService-Info.plist in Resources */,
+				A2BC4F222E5574EB00BB787F /* ballMember0.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2176,7 +2172,7 @@
 					/usr/lib/swift,
 					"$(SDKROOT)/usr/lib/arc",
 				);
-				MARKETING_VERSION = 0.8.10;
+				MARKETING_VERSION = 0.8.20;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"sqlite3\"",
@@ -2296,7 +2292,7 @@
 					/usr/lib/swift,
 					"$(SDKROOT)/usr/lib/arc",
 				);
-				MARKETING_VERSION = 0.8.10;
+				MARKETING_VERSION = 0.8.20;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"sqlite3\"",
